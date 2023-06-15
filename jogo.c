@@ -59,13 +59,13 @@ int main()
 
     printf("\n-------------------------------");
     printf("\n*****Bem Vindo ao Jogo!***** \n \n");
-    printf("Digite 1 para Iniciar um Novo Jogo \nDigite 2 para Carregar um Jogo Salvo \nDigite 3 para ver os Créditos \nDigite 4 para Sair \n\n    >>> ");
+    printf("Digite 1 para Iniciar um Novo Jogo \nDigite 2 para Carregar um Jogo Salvo \nDigite 3 para ver os CrÃ©ditos \nDigite 4 para Sair \n\n    >>> ");
     scanf("%d", &menu);
 
     switch (menu)
     {
     case 1:
-        printf("\n\n-------------------------------\nVocê iniciou um Novo Jogo!\nInsira seu Nick\n    >>> ");
+        printf("\n\n-------------------------------\nVocÃª iniciou um Novo Jogo!\nInsira seu Nick\n    >>> ");
         fflush(stdin);
         gets(nome);
         nome[i - 1] = '\0';
@@ -77,7 +77,7 @@ int main()
         {
             while(sexo != 1 && sexo != 2)
             {
-                printf("\n***Comando Inválido***");
+                printf("\n***Comando InvÃ¡lido***");
                 printf("\n \nDigite 1 para Homem / Digite 2 para Mulher\n\n    >>> ");
                 scanf("%d", &sexo);
             }
@@ -100,11 +100,11 @@ int main()
             {
             case(1):;
                 char classman[20] = "Guerreiro";
-                printf("\nVocê é um %s\n", classman);
+                printf("\nVocÃª Ã© um %s\n", classman);
                 break;
             case(2):;
                 char classwoman[20] = "Guerreira";
-                printf("\nVocê é uma %s\n", classwoman);
+                printf("\nVocÃª Ã© uma %s\n", classwoman);
                 break;
             }
 
@@ -123,11 +123,11 @@ int main()
             {
             case(1):;
                 char classman[20] = "Assassino";
-                printf("\nVocê é um %s\n", classman);
+                printf("\nVocÃª Ã© um %s\n", classman);
                 break;
             case(2):;
                 char classwoman[20] = "Assassina";
-                printf("\nVocê é uma %s\n", classwoman);
+                printf("\nVocÃª Ã© uma %s\n", classwoman);
                 break;
             }
             
@@ -145,11 +145,11 @@ int main()
             {
             case(1):;
                 char classman[20] = "Mago";
-                printf("\nVocê é um %s\n", classman);
+                printf("\nVocÃª Ã© um %s\n", classman);
                 break;
             case(2):;
                 char classwoman[20] = "Maga";
-                printf("\nVocê é uma %s\n", classwoman);
+                printf("\nVocÃª Ã© uma %s\n", classwoman);
                 break;
             }
             points = 0;
@@ -172,8 +172,8 @@ int main()
 
         break;
     case (3):
-        printf("\n-------------------------------\nVocê Selecionou a opção Créditos!\n\n");
-        printf("Feito por Felipe Serejo Monteiro, aluno do 1º período de Ciências da Computação \nda UFRRJ de Nova Iguaçu.\n");
+        printf("\n-------------------------------\nVocÃª Selecionou a opÃ§Ã£o CrÃ©ditos!\n\n");
+        printf("Feito por Felipe Serejo Monteiro, aluno do 1Âº perÃ­odo de CiÃªncias da ComputaÃ§Ã£o \nda UFRRJ de Nova IguaÃ§u, no ano de 2023.\n");
         break;
 
     default:
