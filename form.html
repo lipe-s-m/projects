@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div>
+        <h1>Cadastro de Funcionários</h1>
+        <p>Complete suas informações:</p>
+        <hr>
+        <br>
+
+    </div>
+    <form action="https://textoeditable.com.br/bloco-de-notas-online/" method="GET">
+        <fieldset>
+            <UL>
+            <div>
+                <LI><label>Nome</label>
+                <input type="text" name="nome" id="nome">
+            </div>
+
+            <div>
+                <LI><label>Sobrenome</label>
+                <input type="text" name="sobrenome" id="sobrenome">
+            </div>
+            
+            <div>
+                <LI><label>Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <BR></BR>
+            <div>
+                <LI><label>Você trabalha em qual Setor?<BR></label>
+                <label>
+                    <input type="radio" nome="merchan" value="merchan adm">Merchandising (Administração)
+                </label>
+                <label>
+                    <input type="radio" nome="merchan" value="merchan estoque">Merchandising (Estoque)
+                </label>
+                <label for="">
+                    <input type="radio" nome="vendas" value="vendedor">Vendedor
+                </label>
+
+                <div>
+                    <LI><label for="">Tempo de Trabalho</label>
+                    <select id="tempotrabalho">
+                        <option selected disable value=""></option>
+                        <option value="novo">Entre 0 e 5 anos</option>
+                        <option value="medio">Entre 6 a 10 anos</option>
+                        <option value="antigo">Mais de 10 anos</option>
+                    </select>
+                </div>
+
+                <br>
+                
+                <div>
+                    <LI><label for="">Me dê uma sugestão de melhoria <BR></label>
+                    <textarea name="sugestao" id="sugestao" cols="30" rows="10" style="width: 26em"></textarea>
+                </div>
+            </UL>
+            </div>
+        </fieldset>
+        <br>
+        <br>
+        <button type="submit">Concluído</button>
+    </form>
+    
+</body>
+</html>
