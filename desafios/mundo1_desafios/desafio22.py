@@ -1,0 +1,18 @@
+nome = input('Digite seu nome completo: ')
+maiusculo = nome.upper()
+minusculo = nome.lower()
+title = nome.title()
+dividido = nome.split()
+contar = len(dividido[0])
+nome = nome.split()
+junto = ''.join(nome)
+contar_tudo = len(junto)
+
+print(maiusculo)
+print(minusculo)
+print(title)
+print(junto)
+print(f'Seu primeiro nome possui {contar} letras.')
+print(f'Seu nome completo possui {contar_tudo} letras.')
+
+# para juntar tambem poderia usar nome.replace(' ', '')
