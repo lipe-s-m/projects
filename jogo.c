@@ -27,9 +27,9 @@ void capitalize(char str1[], char str2[])
 unsigned short int strings_iguais(char str1[], char str2[])
 {
     int i = 0;
-    while(str1[i] == str2[i] && str1[i] != '\0' && str2[i] != '\0')
+    while (str1[i] == str2[i] && str1[i] != '\0' && str2[i] != '\0')
     {
-        if(str1[i] == '\0' && str2[i] == '\0')
+        if (str1[i] == '\0' && str2[i] == '\0')
         {
             return 1;
         }
@@ -38,8 +38,6 @@ unsigned short int strings_iguais(char str1[], char str2[])
             return 0;
         }
     }
-
-
 }
 
 int main()
@@ -73,9 +71,9 @@ int main()
 
         printf("\n \n\nDigite 1 para Homem / Digite 2 para Mulher\n\n    >>> ");
         scanf("%d", &sexo);
-        if(sexo != 1 || sexo != 2)
+        if (sexo != 1 || sexo != 2)
         {
-            while(sexo != 1 && sexo != 2)
+            while (sexo != 1 && sexo != 2)
             {
                 printf("\n***Comando Inválido***");
                 printf("\n \nDigite 1 para Homem / Digite 2 para Mulher\n\n    >>> ");
@@ -83,8 +81,10 @@ int main()
             }
         }
 
-        if(sexo == 1) printf("\nBem Vindo ao Jogo, %s!!!\n\n", nome);
-        else if(sexo == 2) printf("\nBem Vinda ao Jogo, %s!!!\n\n", nome);
+        if (sexo == 1)
+            printf("\nBem Vindo ao Jogo, %s!!!\n\n", nome);
+        else if (sexo == 2)
+            printf("\nBem Vinda ao Jogo, %s!!!\n\n", nome);
 
         system("pause");
         system("cls");
@@ -93,16 +93,16 @@ int main()
         fflush(stdin);
 
         scanf("%d", &nome_classe);
-        switch(nome_classe)
+        switch (nome_classe)
         {
-        case(1):;
-            switch(sexo)
+        case (1):;
+            switch (sexo)
             {
-            case(1):;
+            case (1):;
                 char classman[20] = "Guerreiro";
                 printf("\nVocê é um %s\n", classman);
                 break;
-            case(2):;
+            case (2):;
                 char classwoman[20] = "Guerreira";
                 printf("\nVocê é uma %s\n", classwoman);
                 break;
@@ -118,19 +118,19 @@ int main()
             sorte = 8;
             break;
 
-        case(2):
-            switch(sexo)
+        case (2):
+            switch (sexo)
             {
-            case(1):;
+            case (1):;
                 char classman[20] = "Assassino";
                 printf("\nVocê é um %s\n", classman);
                 break;
-            case(2):;
+            case (2):;
                 char classwoman[20] = "Assassina";
                 printf("\nVocê é uma %s\n", classwoman);
                 break;
             }
-            
+
             points = 0;
             forca = 10;
             destreza = 14;
@@ -140,14 +140,14 @@ int main()
             carisma = 8;
             sorte = 14;
             break;
-        case(3):
-            switch(sexo)
+        case (3):
+            switch (sexo)
             {
-            case(1):;
+            case (1):;
                 char classman[20] = "Mago";
                 printf("\nVocê é um %s\n", classman);
                 break;
-            case(2):;
+            case (2):;
                 char classwoman[20] = "Maga";
                 printf("\nVocê é uma %s\n", classwoman);
                 break;
@@ -162,13 +162,8 @@ int main()
             sorte = 10;
             puts("https://imgur.com/EQQRMSR");
             break;
-
         }
         printf("\n\n%d %d %d\n", forca, vigor, magia);
-
-
-
-        
 
         break;
     case (3):
@@ -177,10 +172,8 @@ int main()
         break;
 
     default:
-        break;  
+        break;
     }
-
-
 
     system("pause");
     return 0;
