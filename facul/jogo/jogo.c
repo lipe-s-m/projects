@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <time.h>
+#include <Windows.h>
 
 typedef struct _ATRIBUTOS
 {
     int ataque, defesa, vigor, magia;
-}ATRIBUTOS;
+} ATRIBUTOS;
 
 typedef struct _PERSONAGEM
 {
@@ -15,12 +17,14 @@ typedef struct _PERSONAGEM
     int inimigo[10];
     char classe[15];
     int posicao[30];
+    int level;
 
-}PERSONAGEM;
+} PERSONAGEM;
 
 void press();
 void limpar_tela();
 void imprimir_menu();
+
 PERSONAGEM carregar_jogo(int *valor, PERSONAGEM);
 
 int main()
@@ -29,75 +33,89 @@ int main()
     FILE *gravar;
     gravar = fopen("gravar.txt", "w");
 
-    if(gravar == NULL)
+    if (gravar == NULL)
     {
         printf("\nmano deu erro\n");
     }
 
     PERSONAGEM jogador1;
-    int i, opcao = 1, salvar, carregar;
+    int i, opcao = 1, salvar, carregar, sair = 1;
     int vazio = 0;
     char comando;
-    char palavra[30];
+    char palavra[30], temp[23];
 
     jogador1 = carregar_jogo(&opcao, jogador1);
 
-
-
-
-  
-
-
     press();
-    while(opcao)
+    while (opcao)
     {
         limpar_tela();
         imprimir_menu();
         scanf("%c", &comando);
-        switch(comando)
+        switch (comando)
         {
-            case 'A':
-            printf("\nVocê atacou, %s deu %d de dano", jogador1.nome, jogador1.habilidade.ataque);
+        case 'A':
+            printf("\nVocê atacou, %s deu %d de dano, (so pra mostrar a classe: %s)", jogador1.nome, jogador1.habilidade.ataque, jogador1.classe);
             press();
 
-
             break;
-            
-            
-            case 'Q':
+        case 'I':
+            printf("%s está no level %d, classe %s", jogador1.nome, jogador1.level, jogador1.classe);
+            press();
+            break;
+        case 'O':
+            puts("Ta olhando oq doidao?");
+            press();
+            break;
+
+        case 'D':
+            printf("%s, Digite em MAIUSCULO as letras correspondentes as que estao no menu");
+            press();
+            break;
+        case 'Q':
+            while(sair)
+            {
             printf("\n%s %15s %15s\n", "0 - NAO", "1 - SIM", "2 - VOLTAR");
             printf("Deseja Salvar seu progresso? \n    >>> ");
             scanf("%d", &salvar);
-            switch(salvar)
+            switch (salvar)
             {
-                case 0:
-                if(salvar == 0)
+            case 0:
+                if (salvar == 0)
                 {
                     opcao = 0;
-                }
-                break;
-                case 1:
-                if(salvar == 1);
-                    printf("%s salvou seu jogo", jogador1.nome);
                     
+
+                }
+                sair = 0;
+                break;
+            case 1:
+                if (salvar == 1)
+                {
+                    printf("%s salvou seu jogo", jogador1.nome);
+
                     fprintf(gravar, "%s", jogador1.nome);
                     fprintf(gravar, "%d", jogador1.vida);
 
                     opcao = 0;
+                }
+                sair = 0;
                 break;
 
-                case 2:
+            case 2:
                 break;
-                default:
-                puts("**Valor Inválido, Tente novamente...**");
+            default:
+                puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                scanf("%s", temp);
+                sair = 1;
+                limpar_tela();
                 break;
+            }
             }
             break;
         }
     }
 
-    
-    
     fclose(gravar);
 
     printf("\n%s fechou o jogo", jogador1.nome);
@@ -114,24 +132,21 @@ void press()
 }
 void limpar_tela()
 {
-  
     system("cls");
     fflush(stdin);
-
-
-
 }
 void imprimir_menu()
 {
-    printf("\n%10s %10s %10s %10s %10s %10s\n", "A - Atacar", "M - Menu", "O - Olhar", "I - Ir", "Q = Sair", "D - Dica");
+    printf("\n%10s %10s %10s %10s %10s %10s\n", "A - Atacar", "M - Movimentar", "O - Olhar", "I - Info", "Q = Sair", "D - Dica");
     printf("\nEscolha uma opção:\n     >>> ");
 }
 
 PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
 {
     PERSONAGEM jogador2;
-    int carregar, classe, parada = 1, confirma;
-    
+    int carregar, parada = 1, confirma;
+    char genero, classe;
+    char temp[23];
 
     system("cls");
     printf("\nBem Vindo ao nosso jogo!\n");
@@ -140,61 +155,131 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
     scanf("%d", &carregar);
 
     int i;
-    if(carregar == 0)
+    if (carregar == 0)
     {
         printf("Insira seu nome: ");
         scanf("%s", jogador2.nome);
         system("cls");
-        
-        while(parada)
+
+        while (parada)
         {
             system("cls");
+            jogador2.level = 1;
             printf("Escolha uma classe: ");
-            printf("\n%s %15s %15s\n", "1 - Guerreiro", "2 - Assassino", "3 - VOLTAR");
-            scanf("%d", &classe);
-            switch(classe)
+            printf("\n%s %15s %15s\n", "1 - Guerreiro", "2 - Assassino", "3 - Mago");
+            fflush(stdin);
+            scanf("%c", &classe);
+            switch (classe)
             {
+            case '1':
+                printf("\nA classe Guerreiro tem 12 de ataque, 12 de defesa, 12 de vigor, 0 de magia\n\n");
+                printf("Deseja selecionar a classe Guerreiro?");
+                printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
+                scanf("%d", &confirma);
+                switch (confirma)
+                {
                 case 1:
-                    printf("\nA classe guerreiro tem 12 de ataque, 12 de defesa, 12 de vigor, 0 de magia\n");
-                    printf("Deseja selecionar a classe Guerreiro?");
-                    printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
-                    scanf("%d", &confirma);
-                    switch(confirma)
+                    
+                    jogador2.habilidade.ataque = 12, jogador2.habilidade.defesa = 12, jogador2.habilidade.vigor = 0, jogador2.habilidade.magia = 12;
+                    printf("Você quer ser um {guerreiro} ou uma {guerreira}?\n    >>> ");
+                    fflush(stdin);
+                    gets(jogador2.classe);
+                
+                    if(strcmp(jogador2.classe, "guerreiro") == 0 || strcmp(jogador2.classe, "guerreira") == 0)
                     {
-                        case 1:
-                        jogador2.habilidade.ataque = 12, jogador2.habilidade.defesa = 12, jogador2.habilidade.vigor = 0, jogador2.habilidade.magia = 12;        
-                        printf("%s, você é um Guerreiro", jogador2.nome);
-                        parada = 0;
-                        break;
-                        case 2:
-                        break;
+                    printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                    parada = 0;
+                    }
+                    else
+                    {
+                        puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                        scanf("%s", temp);
                     }
                     break;
                 case 2:
-                    printf("\nA classe Assassino tem 18 de ataque, 8 de defesa, 10 de vigor, 0 de magia\n");
-                    printf("Deseja selecionar a classe Assassino?");
-                    printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
-                    scanf("%d", &confirma);
-                    switch(confirma)
-                    {
-                        case 1:
-                        jogador2.habilidade.ataque = 18, jogador2.habilidade.defesa = 8, jogador2.habilidade.vigor = 10, jogador2.habilidade.magia = 0;        
-                        printf("%s, você é um Assassino", jogador2.nome);
-                        parada = 0;
-                        break;
-                        case 2:
-                        break;
-                    }
                     break;
                 default:
-                break;
-
-
+                    puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                    scanf("%s", temp);
+                    break;
+                }
+                break;    
+            case '2':
+            
+                printf("\nA classe Assassino tem 18 de ataque, 8 de defesa, 10 de vigor, 0 de magia\n\n");
+                printf("Deseja selecionar a classe Assassino?");
+                printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
+                scanf("%d", &confirma);
+                switch (confirma)
+                {
+                case 1:
+                    
+                    jogador2.habilidade.ataque = 18, jogador2.habilidade.defesa = 8, jogador2.habilidade.vigor = 10, jogador2.habilidade.magia = 0;
+                    printf("Você quer ser um {assassino} ou uma {assassina}?\n    >>> ");
+                    fflush(stdin);
+                    gets(jogador2.classe);
+                
+                    if(strcmp(jogador2.classe, "assassino") == 0 || strcmp(jogador2.classe, "assassina") == 0)
+                    {
+                    printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                    parada = 0;
+                    }
+                    else
+                    {
+                        puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                        scanf("%s", temp);
+                    }
+                    break;
+                case 2:
+                    break;
+                default:
+                    printf("***Comando Inválido, tente novamente...***");
+                    break;
+                }
+                break;    
+            case '3':
+                printf("\nA classe Mago tem 4 de ataque, 8 de defesa, 10 de vigor, 14 de magia\n");
+                printf("Deseja selecionar a classe Mago?");
+                printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
+                scanf("%d", &confirma);
+                switch (confirma)
+                {
+                case 1:
+                    
+                    jogador2.habilidade.ataque = 18, jogador2.habilidade.defesa = 8, jogador2.habilidade.vigor = 10, jogador2.habilidade.magia = 0;
+                    printf("Você quer ser um {mago} ou uma {maga}?\n    >>> ");
+                    fflush(stdin);
+                    gets(jogador2.classe);
+                
+                    if(strcmp(jogador2.classe, "mago") == 0 || strcmp(jogador2.classe, "maga") == 0)
+                    {
+                    printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                    parada = 0;
+                    }
+                    else
+                    {
+                        puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                        scanf("%s", temp);
+                    }
+                    break;
+                case 2:
+                    break;
+                default:
+                    printf("***Comando Inválido, tente novamente...***");
+                    break;
+                }
+                break;    
+                default:
+                    
+                    puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                    scanf("%s", temp);
+                   
+                    break;
             }
         }
         return jogador2;
     }
-    if(carregar == 1)
+    if (carregar == 1)
     {
         char texto[200];
         char nome[40];
@@ -203,12 +288,12 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
         FILE *fp_salvar;
         fp_carregar = fopen("gravar.txt", "r+");
         fp_salvar = fopen("carregarjogo.txt", "w");
-        if(fp_carregar == NULL)
+        if (fp_carregar == NULL)
         {
             printf("coe deu ruim");
         }
         i = 1;
-        while(!feof(fp_carregar))
+        while (!feof(fp_carregar))
         {
             fscanf(fp_carregar, "%c", &texto);
             fprintf(fp_salvar, "%c", texto);
@@ -218,10 +303,9 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
         fclose(fp_carregar);
         fclose(fp_salvar);
         return jogador2;
-
     }
     if (carregar == 2)
-    {   
+    {
         *valor = 0;
         printf("%d", *valor);
     }
