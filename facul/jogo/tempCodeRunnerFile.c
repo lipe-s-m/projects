@@ -1,2 +1,2 @@
-e, jogador2.classe);
-                    parada = 0;
+
+        *valor = 0;
