@@ -6,13 +6,13 @@
 
 typedef struct _ATRIBUTOS
 {
-    int ataque, defesa, vigor, magia;
+    int habilidade, energia, sorte;
 } ATRIBUTOS;
 
 typedef struct _PERSONAGEM
 {
     int vida;
-    ATRIBUTOS habilidade;
+    ATRIBUTOS atributo;
     char nome[40];
     int inimigo[10];
     char classe[15];
@@ -21,31 +21,30 @@ typedef struct _PERSONAGEM
 
 } PERSONAGEM;
 
+int jogar_dado(int n);
+PERSONAGEM dado_inicio(PERSONAGEM);
 void press();
 void limpar_tela();
 void imprimir_menu();
 void ler_pagina();
+void salvar_jogo(PERSONAGEM jogador1);
 
 PERSONAGEM carregar_jogo(int *valor, PERSONAGEM);
 
 int main()
 {
+    srand(time(NULL));
+
     setlocale(LC_ALL, "portuguese");
 
     PERSONAGEM jogador1;
-    int i, opcao = 1, salvar, carregar, sair = 1, posicao = 0;
+    int i, opcao = 1, salvar, carregar, sair = 1, posicao = 0, d, dado;
     int vazio = 0;
     char comando;
     char palavra[30], temp[23];
 
     jogador1 = carregar_jogo(&opcao, jogador1);
-    FILE *gravar;
-    gravar = fopen("gravar.txt", "w");
-
-    if (gravar == NULL)
-    {
-        printf("\nmano deu erro\n");
-    }
+    
 
     press();
     while (opcao)
@@ -56,7 +55,9 @@ int main()
         switch (comando)
         {
         case 'A':
-            printf("\nVocê atacou, %s deu %d de dano, (so pra mostrar a classe: %s)", jogador1.nome, jogador1.habilidade.ataque, jogador1.classe);
+            printf("\nQuantos dados voce quer jogar? \n     >>> ");
+            scanf("%d", &d);
+            dado = jogar_dado(d);
             press();
 
             break;
@@ -98,10 +99,7 @@ int main()
             case 1:
                 if (salvar == 1)
                 {
-                    printf("%s salvou seu jogo", jogador1.nome);
-
-                    fprintf(gravar, "%s %s %d", jogador1.nome, jogador1.classe, jogador1.level);
-
+                    salvar_jogo(jogador1);
                     opcao = 0;
                 }
                 sair = 0;
@@ -121,12 +119,24 @@ int main()
         }
     }
 
-    fclose(gravar);
 
     printf("\n%s fechou o jogo", jogador1.nome);
-    // scanf("%d", &jogador1.habilidade.defesa);
-    // printf("\nvoce tem %d de defesa", jogador1.habilidade.defesa);
+    // scanf("%d", &jogador1.atributo.energia);
+    // printf("\nvoce tem %d de energia", jogador1.atributo.energia);
     return 0;
+}
+void salvar_jogo(PERSONAGEM jogador1)
+{
+    FILE *gravar;
+
+    if (gravar == NULL)
+    {
+        perror("\nmano deu erro\n");
+    }
+    gravar = fopen("gravar.dat", "wb");
+    fwrite(&jogador1, sizeof(PERSONAGEM), 1, gravar);
+    printf("%s salvou seu jogo", jogador1.nome);
+    fclose(gravar);
 }
 void ler_pagina()
 {
@@ -144,6 +154,21 @@ void limpar_tela()
     system("cls");
     fflush(stdin);
 }
+
+int jogar_dado(int n)
+{
+    int dado;
+    dado = (rand() % 6) +1;
+    printf("%d ", dado);
+    if (n == 1)
+        return dado;
+    else
+        {
+        dado = 0;
+        return jogar_dado(n-1);
+        }
+}
+
 void imprimir_menu()
 {
     printf("\n%10s %10s %10s %10s %10s %10s\n", "A - Atacar", "M - Movimentar", "O - Olhar", "I - Info", "Q = Sair", "D - Dica");
@@ -181,22 +206,27 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
             switch (classe)
             {
             case '1':
-                printf("\nA classe Guerreiro tem 12 de ataque, 12 de defesa, 12 de vigor, 0 de magia\n\n");
+                printf("\nA classe Guerreiro possui as seguintes vantagens iniciais:\n -> {dado} + 6 de habilidade, {2*dado} + 12 de energia e {dado} + 6 de sorte <-\n\n \n");
                 printf("Deseja selecionar a classe Guerreiro?");
                 printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
                 scanf("%d", &confirma);
+                limpar_tela();
+
                 switch (confirma)
                 {
                 case 1:
                     
-                    jogador2.habilidade.ataque = 12, jogador2.habilidade.defesa = 12, jogador2.habilidade.vigor = 0, jogador2.habilidade.magia = 12;
                     printf("Você quer ser um {guerreiro} ou uma {guerreira}?\n    >>> ");
                     fflush(stdin);
                     gets(jogador2.classe);
+                    limpar_tela();
                 
                     if(strcmp(jogador2.classe, "guerreiro") == 0 || strcmp(jogador2.classe, "guerreira") == 0)
                     {
-                    printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                    limpar_tela();
+                    printf("%s, Você escolheu a classe: %s\n", jogador2.nome, jogador2.classe);
+                    jogador2.atributo.habilidade = 6, jogador2.atributo.energia = 12, jogador2.atributo.sorte = 6;
+                    jogador2 = dado_inicio(jogador2);
                     parada = 0;
                     }
                     else
@@ -215,7 +245,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 break;    
             case '2':
             
-                printf("\nA classe Assassino tem 18 de ataque, 8 de defesa, 10 de vigor, 0 de magia\n\n");
+                printf("\nA classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 12 de habilidade, {2*dado} + 6 de energia e {dado} + 6 de sorte <-\n\n \n");
                 printf("Deseja selecionar a classe Assassino?");
                 printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
                 scanf("%d", &confirma);
@@ -223,14 +253,16 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 {
                 case 1:
                     
-                    jogador2.habilidade.ataque = 18, jogador2.habilidade.defesa = 8, jogador2.habilidade.vigor = 10, jogador2.habilidade.magia = 0;
                     printf("Você quer ser um {assassino} ou uma {assassina}?\n    >>> ");
                     fflush(stdin);
                     gets(jogador2.classe);
                 
                     if(strcmp(jogador2.classe, "assassino") == 0 || strcmp(jogador2.classe, "assassina") == 0)
                     {
+                    limpar_tela();
                     printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                    jogador2.atributo.habilidade = 18, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 10;
+                    jogador2 = dado_inicio(jogador2);
                     parada = 0;
                     }
                     else
@@ -247,7 +279,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 }
                 break;    
             case '3':
-                printf("\nA classe Mago tem 4 de ataque, 8 de defesa, 10 de vigor, 14 de magia\n");
+                printf("\nA classe Mago possui as seguintes vantagens iniciais:\n -> {dado} + 3 de habilidade, {2*dado} + 6 de energia e {dado} + 14 de sorte <-\n\n \n");
                 printf("Deseja selecionar a classe Mago?");
                 printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
                 scanf("%d", &confirma);
@@ -255,14 +287,16 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 {
                 case 1:
                     
-                    jogador2.habilidade.ataque = 4, jogador2.habilidade.defesa = 8, jogador2.habilidade.vigor = 10, jogador2.habilidade.magia = 14;
                     printf("Você quer ser um {mago} ou uma {maga}?\n    >>> ");
                     fflush(stdin);
                     gets(jogador2.classe);
                 
                     if(strcmp(jogador2.classe, "mago") == 0 || strcmp(jogador2.classe, "maga") == 0)
                     {
+                    jogador2.atributo.habilidade = 4, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 10;
+                    limpar_tela();
                     printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                    jogador2 = dado_inicio(jogador2);
                     parada = 0;
                     }
                     else
@@ -290,22 +324,18 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
     }
     if (carregar == 1)
     {
-        char texto[200];
-        char nome[40];
-        int vida;
         FILE *fp_carregar;
-        fp_carregar = fopen("gravar.txt", "r+");
+        fp_carregar = fopen("gravar.dat", "rb");
         if (fp_carregar == NULL)
         {
-            printf("coe deu ruim");
+            perror("coe deu ruim");
         }
         i = 1;
         while (!feof(fp_carregar))
         {
-            fscanf(fp_carregar, "%s %s %d", jogador2.nome, jogador2.classe, jogador2.level);
+            fread(&jogador2, sizeof(PERSONAGEM), 1, fp_carregar);
         }
         printf("\nBem Vindo de volta %s! Sua classe é %s, voce esta no level %d,", jogador2.nome, jogador2.classe, jogador2.level);
-
         fclose(fp_carregar);
         return jogador2;
     }
@@ -314,4 +344,46 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
         *valor = 0;
         printf("%d", *valor);
     }
+}
+
+PERSONAGEM dado_inicio(PERSONAGEM jogador)
+{
+    int parada = 1, dados = 4, dado, i = 0, hab = jogador.atributo.habilidade, ener = jogador.atributo.energia, sor = jogador.atributo.sorte;
+    char temp[20];
+    while(i<3)
+    {  
+        dado = (rand() % 6) +1;
+        printf("\n\033[1mTESTE SUA SORTE %s!\033[0m\n", jogador.nome);
+        
+        printf("\nDigite qualquer tecla para jogar o dado!\n");
+        scanf("%s", temp);
+        limpar_tela();
+
+
+        if(i == 0)
+        {
+            
+            jogador.atributo.habilidade += dado;
+            printf("\nVocê tirou %d no dado, agora você tem %d de Habilidade\n", jogador.atributo.habilidade - hab, jogador.atributo.habilidade);
+
+        }
+        if(i == 1)
+        {
+            
+            jogador.atributo.energia += (dado*2);
+            printf("\nVocê tirou %d no dado, agora você tem %d de Energia\n", jogador.atributo.energia - ener, jogador.atributo.energia);
+
+        }
+        if(i == 2)
+        {
+            
+            jogador.atributo.sorte += (dado);
+            printf("\nVocê tirou %d no dado, agora você tem %d de Sorte\n", jogador.atributo.sorte - sor, jogador.atributo.sorte);
+
+        }
+        i++;
+       
+    }   
+        
+    return jogador;
 }

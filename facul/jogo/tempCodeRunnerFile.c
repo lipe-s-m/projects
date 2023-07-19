@@ -1,2 +1,1 @@
-
-        *valor = 0;
+        printf("Digite qualquer tecla para jogar o dado!");
