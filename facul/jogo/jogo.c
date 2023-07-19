@@ -16,7 +16,7 @@ typedef struct _PERSONAGEM
     char nome[40];
     int inimigo[10];
     char classe[15];
-    int posicao[30];
+    int posicao;
     int level;
 
 } PERSONAGEM;
@@ -26,7 +26,7 @@ PERSONAGEM dado_inicio(PERSONAGEM);
 void press();
 void limpar_tela();
 void imprimir_menu();
-void ler_pagina();
+PERSONAGEM ler_pagina(PERSONAGEM jogador);
 void salvar_jogo(PERSONAGEM jogador1);
 
 PERSONAGEM carregar_jogo(int *valor, PERSONAGEM);
@@ -76,7 +76,8 @@ int main()
             break;
         case 'M':
             printf("\n%s, Para onde voce deseja ir?\n     >>> ", jogador1.nome);
-            scanf("%d", posicao);
+            scanf("%d", &jogador1.posicao);
+            ler_pagina(jogador1);
 
             break;
         case 'Q':
@@ -116,6 +117,12 @@ int main()
             }
             }
             break;
+        default:
+            puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+            scanf("%s", temp);
+            
+            limpar_tela();
+            break;
         }
     }
 
@@ -138,16 +145,31 @@ void salvar_jogo(PERSONAGEM jogador1)
     printf("%s salvou seu jogo", jogador1.nome);
     fclose(gravar);
 }
-void ler_pagina()
+PERSONAGEM ler_pagina(PERSONAGEM jogador)
 {
-    
+    FILE *entrada, *saida;
+    char c[3500];
+    char texto;
+    entrada = fopen("teste.txt", "r");
+    saida = fopen("saida.dat", "wb");
+    while(texto != '@')
+    {
+        fscanf(entrada, "%c", &texto);
+        fwrite(&texto, sizeof(texto), 1, saida);
+        printf("%c", texto);
+    }
+    press();
+
+    fclose(entrada);
+    fclose(saida);
 }
 
 void press()
 {
-    int temp;
+    char temp[20];
     printf("\n \nPressione qualquer letra para se continuar...\n");
-    scanf("%d", &temp);
+    scanf("%s", temp);
+
 }
 void limpar_tela()
 {
@@ -178,171 +200,184 @@ void imprimir_menu()
 PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
 {
     PERSONAGEM jogador2;
-    int carregar, parada = 1, confirma;
+    int carregar, parada = 1, confirma, menu =1;
     char genero, classe;
     char temp[23];
 
-    system("cls");
-    printf("\nBem Vindo ao nosso jogo!\n");
-
-    printf("\n%10s / %10s / %10s\n \n    >>> ", "(0) - Iniciar Novo Jogo", "{1} - Carregar Jogo Salvo", "2 - Sair");
-    scanf("%d", &carregar);
-
-    int i;
-    if (carregar == 0)
-    {
-        printf("Insira seu nome: ");
-        scanf("%s", jogador2.nome);
+    while(menu)
+    {    
         system("cls");
-        jogador2.level = 1;
+        printf("\nBem Vindo ao nosso jogo!\n");
 
-        while (parada)
+        printf("\n%10s \t %10s \t %10s \t %10s\n \n    >>> ", "{0} - Iniciar Novo Jogo", "{1} - Carregar Jogo Salvo", "{2} - Creditos", "{3} - Sair");
+        scanf("%d", &carregar);
+
+        int i;
+        if (carregar == 0)
         {
+            printf("Insira seu nome: ");
+            scanf("%s", jogador2.nome);
             system("cls");
-            printf("Escolha uma classe: ");
-            printf("\n%s %15s %15s\n", "1 - Guerreiro", "2 - Assassino", "3 - Mago");
-            fflush(stdin);
-            scanf("%c", &classe);
-            switch (classe)
-            {
-            case '1':
-                printf("\nA classe Guerreiro possui as seguintes vantagens iniciais:\n -> {dado} + 6 de habilidade, {2*dado} + 12 de energia e {dado} + 6 de sorte <-\n\n \n");
-                printf("Deseja selecionar a classe Guerreiro?");
-                printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
-                scanf("%d", &confirma);
-                limpar_tela();
+            jogador2.level = 1;
 
-                switch (confirma)
+            while (parada)
+            {
+                system("cls");
+                printf("Escolha uma classe: ");
+                printf("\n%s %15s %15s\n", "1 - Guerreiro", "2 - Assassino", "3 - Mago");
+                fflush(stdin);
+                scanf("%c", &classe);
+                switch (classe)
                 {
-                case 1:
+                case '1':
+                    printf("\nA classe Guerreiro possui as seguintes vantagens iniciais:\n -> {dado} + 6 de habilidade, {2*dado} + 12 de energia e {dado} + 6 de sorte <-\n\n \n");
+                    printf("Deseja selecionar a classe Guerreiro?");
+                    printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
+                    scanf("%d", &confirma);
+                    limpar_tela();
+
+                    switch (confirma)
+                    {
+                    case 1:
+                        
+                        printf("Você quer ser um {guerreiro} ou uma {guerreira}?\n    >>> ");
+                        fflush(stdin);
+                        gets(jogador2.classe);
+                        limpar_tela();
                     
-                    printf("Você quer ser um {guerreiro} ou uma {guerreira}?\n    >>> ");
-                    fflush(stdin);
-                    gets(jogador2.classe);
-                    limpar_tela();
-                
-                    if(strcmp(jogador2.classe, "guerreiro") == 0 || strcmp(jogador2.classe, "guerreira") == 0)
-                    {
-                    limpar_tela();
-                    printf("%s, Você escolheu a classe: %s\n", jogador2.nome, jogador2.classe);
-                    jogador2.atributo.habilidade = 6, jogador2.atributo.energia = 12, jogador2.atributo.sorte = 6;
-                    jogador2 = dado_inicio(jogador2);
-                    parada = 0;
-                    }
-                    else
-                    {
+                        if(strcmp(jogador2.classe, "guerreiro") == 0 || strcmp(jogador2.classe, "guerreira") == 0)
+                        {
+                        limpar_tela();
+                        printf("%s, Você escolheu a classe: %s\n", jogador2.nome, jogador2.classe);
+                        jogador2.atributo.habilidade = 6, jogador2.atributo.energia = 12, jogador2.atributo.sorte = 6;
+                        jogador2 = dado_inicio(jogador2);
+                        parada = 0;
+                        }
+                        else
+                        {
+                            puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                            scanf("%s", temp);
+                        }
+                        break;
+                    case 2:
+                        break;
+                    default:
                         puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
                         scanf("%s", temp);
+                        break;
                     }
-                    break;
-                case 2:
-                    break;
-                default:
-                    puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
-                    scanf("%s", temp);
-                    break;
-                }
-                break;    
-            case '2':
-            
-                printf("\nA classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 12 de habilidade, {2*dado} + 6 de energia e {dado} + 6 de sorte <-\n\n \n");
-                printf("Deseja selecionar a classe Assassino?");
-                printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
-                scanf("%d", &confirma);
-                switch (confirma)
-                {
-                case 1:
-                    
-                    printf("Você quer ser um {assassino} ou uma {assassina}?\n    >>> ");
-                    fflush(stdin);
-                    gets(jogador2.classe);
+                    break;    
+                case '2':
                 
-                    if(strcmp(jogador2.classe, "assassino") == 0 || strcmp(jogador2.classe, "assassina") == 0)
+                    printf("\nA classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 12 de habilidade, {2*dado} + 6 de energia e {dado} + 6 de sorte <-\n\n \n");
+                    printf("Deseja selecionar a classe Assassino?");
+                    printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
+                    scanf("%d", &confirma);
+                    switch (confirma)
                     {
-                    limpar_tela();
-                    printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
-                    jogador2.atributo.habilidade = 18, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 10;
-                    jogador2 = dado_inicio(jogador2);
-                    parada = 0;
+                    case 1:
+                        
+                        printf("Você quer ser um {assassino} ou uma {assassina}?\n    >>> ");
+                        fflush(stdin);
+                        gets(jogador2.classe);
+                    
+                        if(strcmp(jogador2.classe, "assassino") == 0 || strcmp(jogador2.classe, "assassina") == 0)
+                        {
+                        limpar_tela();
+                        printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                        jogador2.atributo.habilidade = 18, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 10;
+                        jogador2 = dado_inicio(jogador2);
+                        parada = 0;
+                        }
+                        else
+                        {
+                            puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                            scanf("%s", temp);
+                        }
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        printf("***Comando Inválido, tente novamente...***");
+                        break;
                     }
-                    else
+                    break;    
+                case '3':
+                    printf("\nA classe Mago possui as seguintes vantagens iniciais:\n -> {dado} + 3 de habilidade, {2*dado} + 6 de energia e {dado} + 14 de sorte <-\n\n \n");
+                    printf("Deseja selecionar a classe Mago?");
+                    printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
+                    scanf("%d", &confirma);
+                    switch (confirma)
                     {
+                    case 1:
+                        
+                        printf("Você quer ser um {mago} ou uma {maga}?\n    >>> ");
+                        fflush(stdin);
+                        gets(jogador2.classe);
+                    
+                        if(strcmp(jogador2.classe, "mago") == 0 || strcmp(jogador2.classe, "maga") == 0)
+                        {
+                        jogador2.atributo.habilidade = 4, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 10;
+                        limpar_tela();
+                        printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                        jogador2 = dado_inicio(jogador2);
+                        parada = 0;
+                        }
+                        else
+                        {
+                            puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                            scanf("%s", temp);
+                        }
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        printf("***Comando Inválido, tente novamente...***");
+                        break;
+                    }
+                    break;    
+                    default:
+                        
                         puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
                         scanf("%s", temp);
-                    }
-                    break;
-                case 2:
-                    break;
-                default:
-                    printf("***Comando Inválido, tente novamente...***");
-                    break;
-                }
-                break;    
-            case '3':
-                printf("\nA classe Mago possui as seguintes vantagens iniciais:\n -> {dado} + 3 de habilidade, {2*dado} + 6 de energia e {dado} + 14 de sorte <-\n\n \n");
-                printf("Deseja selecionar a classe Mago?");
-                printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
-                scanf("%d", &confirma);
-                switch (confirma)
-                {
-                case 1:
                     
-                    printf("Você quer ser um {mago} ou uma {maga}?\n    >>> ");
-                    fflush(stdin);
-                    gets(jogador2.classe);
-                
-                    if(strcmp(jogador2.classe, "mago") == 0 || strcmp(jogador2.classe, "maga") == 0)
-                    {
-                    jogador2.atributo.habilidade = 4, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 10;
-                    limpar_tela();
-                    printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
-                    jogador2 = dado_inicio(jogador2);
-                    parada = 0;
-                    }
-                    else
-                    {
-                        puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
-                        scanf("%s", temp);
-                    }
-                    break;
-                case 2:
-                    break;
-                default:
-                    printf("***Comando Inválido, tente novamente...***");
-                    break;
+                        break;
                 }
-                break;    
-                default:
-                    
-                    puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
-                    scanf("%s", temp);
-                   
-                    break;
             }
+            menu = 0;
+            return jogador2;
         }
-        return jogador2;
-    }
-    if (carregar == 1)
-    {
-        FILE *fp_carregar;
-        fp_carregar = fopen("gravar.dat", "rb");
-        if (fp_carregar == NULL)
+        if (carregar == 1)
         {
-            perror("coe deu ruim");
+            FILE *fp_carregar;
+            fp_carregar = fopen("gravar.dat", "rb");
+            if (fp_carregar == NULL)
+            {
+                perror("coe deu ruim");
+            }
+            i = 1;
+            while (!feof(fp_carregar))
+            {
+                fread(&jogador2, sizeof(PERSONAGEM), 1, fp_carregar);
+            }
+            printf("\nBem Vindo de volta %s! Sua classe é %s, voce esta no level %d,", jogador2.nome, jogador2.classe, jogador2.level);
+            fclose(fp_carregar);
+            menu = 0;
+            return jogador2;
         }
-        i = 1;
-        while (!feof(fp_carregar))
+        
+        if (carregar == 2)
         {
-            fread(&jogador2, sizeof(PERSONAGEM), 1, fp_carregar);
+            printf("Feito por Felipe Serejo Monteiro e Rafael Ferreira Siqueira, alunos do 1 periodo de Ciencia da Computacao.");
+            press();
         }
-        printf("\nBem Vindo de volta %s! Sua classe é %s, voce esta no level %d,", jogador2.nome, jogador2.classe, jogador2.level);
-        fclose(fp_carregar);
-        return jogador2;
-    }
-    if (carregar == 2)
-    {
-        *valor = 0;
-        printf("%d", *valor);
+
+        if (carregar == 3)
+        {
+            *valor = 0;
+            printf("%d", *valor);
+            menu = 0;
+        }    
     }
 }
 

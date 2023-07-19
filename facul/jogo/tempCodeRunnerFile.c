@@ -1,1 +1,1 @@
-        printf("Digite qualquer tecla para jogar o dado!");
+    if (carregar == 3)
