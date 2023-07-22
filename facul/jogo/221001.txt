@@ -1,0 +1,8 @@
+
+Quais são estes objetos misteriosos que você recolheu? Qual deles você anotou primeiro na sua
+Lista de Equipamento?
+                            A armadura?                Volte para 72
+                            O escudo?                  Volte para 132
+                            A espada?                  Volte para 27
+                            O ouro?                    Volte para 110
+                            O crucifixo?               Volte para 170$

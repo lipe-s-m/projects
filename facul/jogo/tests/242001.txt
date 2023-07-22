@@ -1,0 +1,15 @@
+
+A porta abre e revela um pequeno aposento na penumbra. As paredes são cobertas de cortinas
+ornamentadas, com passamanarias de ouro e prata. Uma única chama queima em um dos cantos,
+lançando luz sobre uma mesa baixa no meio do assoalho. Há uma grande arca nessa mesa. Você
+avança para investigar a arca e de todos os lados, mas ao mesmo tempo de lugar nenhum, sai um
+som que enche o aposento. Parece o estrondo de trovoadas que se preparam para se transformar em
+uma tempestade.
+
+Você se aproxima da arca e pode ver que três fechaduras a mantêm fechada. Conforme você se
+aproxima, o ruído fica mais alto ainda. Você:
+
+       Dá um golpe de espada na caixa
+          para tentar cortá-la em duas?                   Vá para 379
+       Procura em sua mochila para ver se
+          encontra chaves que possam servir?              Volte para 139$

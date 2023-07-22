@@ -1,0 +1,7 @@
+
+Você parte para o sul por uma passagem calçada com pedras redondas. Ela vira para o oeste, depois
+para o sul, depois para o oeste de novo até que você se vê em um encontro de três caminhos.
+
+       Para seguir para o norte            Vá para 329
+       Para seguir para o oeste            Volte para 180
+       Para seguir de volta para o leste   Volte para 70$

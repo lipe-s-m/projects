@@ -1,0 +1,3 @@
+
+Depois de alguns metros, você chega a outra junção de três caminhos. Você pode ir na direção norte
+(volte para 8) ou na direção leste (volte para 255).$

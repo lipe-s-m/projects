@@ -1,0 +1,7 @@
+
+Você agora está novamente em uma encruzilhada.
+
+       Para seguir para o norte             Vá para 312
+       Para seguir para o sul               Volte para 246
+       Para seguir para o oeste             Volte para 79
+       Para seguir para o leste             Vá para 349$

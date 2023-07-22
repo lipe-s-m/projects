@@ -1,0 +1,9 @@
+
+Você chega ao final da passagem, onde ela encontra uma outra que vem do leste e vai para o oeste.
+Mas um portão de ferro levadiço bloqueia a sua passagem e não há meio de abalar a sua estrutura à
+força. Na parede à sua direita há duas alavancas, e parece provável que estas alavancas tenham
+alguma coisa a ver com o movimento do portão levadiço. Você quer puxar a alavanca da direita ou
+a da esquerda?
+
+       Direita        Volte para 128
+       Esquerda       Volte para 243$

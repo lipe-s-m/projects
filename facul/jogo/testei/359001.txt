@@ -1,0 +1,11 @@
+
+Voce agora esta em uma encruzilhada.
+
+Para seguir para o norte & 190
+Para seguir para o sul & 94
+Para seguir para o leste & 121
+Para seguir para o oeste &385$
+Digite 190 
+Digite 94 
+Digite 121 
+Digite 385 

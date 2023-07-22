@@ -1,0 +1,4 @@
+
+Você vê uma porta bem desgastada à direita (leste) da passagem. Pondo o ouvido na fechadura,
+você ouve um homem gritando por socorro do lado de dentro. Você abre a porta (volte para 213) ou
+segue em frente (vá para 314)?$

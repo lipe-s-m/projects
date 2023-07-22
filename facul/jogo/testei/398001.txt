@@ -1,0 +1,5 @@
+
+Voce tateia pela parede rochosa no fim da passagem. Um pedaco de rocha se solta e revela uma
+pequena alavanca com um cabo na ponta. Voce vai empurra-la (& 364) ou puxa-la (volte
+para 12)?$
+Digite 364 

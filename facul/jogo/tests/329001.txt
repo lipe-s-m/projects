@@ -1,0 +1,10 @@
+
+Você segue em frente e chega ao meio de uma passagem que vai do norte para o sul. Há uma porta
+na parede oeste da passagem. Do lado oposto, há uma passagem que segue na direção leste. Para o
+norte, você pode ver uma porta a alguns metros adiante. Para o sul, você vê uma encruzilhada. Qual
+rumo você escolherá?
+
+       A porta na parede oeste?              Volte para 157
+       A porta ao norte?                       Vá para 392
+       A direção leste?                      Volte para 299
+       A direção sul?                        Volte para 238$

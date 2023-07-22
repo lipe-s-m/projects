@@ -1,0 +1,9 @@
+
+Você está de pé em uma encruzilhada. Para o oeste, a passagem segue por uns poucos metros e vira
+para o norte. Para o norte, a passagem termina em uma porta. Para o leste, a passagem continua e
+acaba por tomar a direção sul. Olhando para o sul, a passagem se estende até onde a vista alcança.
+
+       Para ir para o oeste          Volte para 187
+       Para ir para o norte          Volte para 54
+       Para ir para o sul            Volte para 160
+       Para ir para o leste          Vá para 354$

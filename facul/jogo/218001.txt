@@ -1,0 +1,12 @@
+
+Você está na margem sul de um rio subterrâneo, olhando para as profundezas negras da água sem
+ver o outro lado. Parece haver quatro maneiras de atravessar. À sua esquerda, um sino enferrujado
+tem um letreiro pendurado dizendo: “Serviço de Travessia: 2 Peças de Ouro – Por Favor, Toque.”
+Há uma jangada pequena atracada na margem com uma longa vara a seu lado: você poderia
+atravessar o rio impulsionando a jangada com a vara. Uma velha ponte frágil atravessa o rio à
+direita. Se você não confia em nenhuma dessas alternativas, pode também nadar. Qual destas
+opções você escolhe?
+                             Tocar o sino                        Volte para 3
+                             Atravessar de jangada               Vá para 386
+                             Arriscar a ponte                    Volte para 209
+                             Nadar                               Vá para 316$

@@ -1,0 +1,5 @@
+
+Você atravessa o aposento na ponta dos pés, sobe uma escada estreita cujo topo leva a uma
+passagem. “Foi fácil”, você pensa, e começa a se perguntar se teria valido a pena revistar os corpos.
+Se você quiser retornar e revistar os corpos, começando com o terceiro, vá para 148. Se quiser
+seguir adiante, vá para 197.$

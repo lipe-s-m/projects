@@ -1,0 +1,12 @@
+
+A passagem a sua frente termina em uma porta solida. Voce tenta escutar algo mas nao ouve nada.
+Voce experimenta a macaneta, ela gira e voce entra no aposento. Voce olha em volta e, de repente,
+ouve um grito de guerra atras de voce: ao se virar, ve um homem selvagem que salta sobre voce,
+brandindo uma grande arma. Trata-se de um BARBARO louco e voce tera que lutar contra ele!
+
+BARBARO HABILIDADE 7 ENERGIA 6
+
+Ha uma porta na parede norte do outro lado atraves da qual voce pode Fugir durante o confronto
+(&189). Se voce derrotar o Barbaro, &273.$
+Digite 189 
+Digite 273 

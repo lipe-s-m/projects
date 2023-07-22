@@ -1,0 +1,4 @@
+
+Seguindo mais adiante na passagem, você vê uma porta na parede leste. Você escuta atentamente,
+mas não ouve nenhum som. Você quer abrir a porta para investigar? Em caso afirmativo, volte para
+223. Se quiser continuar caminhando pela mesma passagem, volte para 300.$

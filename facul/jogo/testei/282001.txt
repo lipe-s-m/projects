@@ -1,0 +1,15 @@
+ 
+Os quatro seres que se arrastam na sua direcao sao ZUMBIS desprovidos de
+mente. Seus olhos vazios sugerem que suas acoes sao controladas por uma
+vontade que nao e a deles. Voce esta tonto demais para raciocinar direito, mas
+precisa agir rapidamente. O primeiro Zumbi chega perto de voce e se prepara
+para erguer o seu porrete. Voce tem que lutar contra ele.
+ZUMBI           HABILIDADE 7            ENERGIA 6
+Se voce derrotar o primeiro Zumbi, adicione 2 pontos de SORTE e vire-se para
+enfrentar os outros tres (lute com um de cada vez):
+                              HABILIDADE             ENERGIA
+ZUMBI com foice                   6                     6
+ZUMBI com picareta                6                     6
+ZUMBI com machado                 6                     5
+Se voce derrotar os quatro, &115.$
+Digite 115 

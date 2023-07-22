@@ -1,0 +1,3 @@
+
+Você está na extremidade sul de uma passagem que vai do norte para o sul - em um beco sem saída.
+Se for na direção norte, chegará a uma encruzilhada. Volte para 85.$

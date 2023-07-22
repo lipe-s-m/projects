@@ -1,0 +1,10 @@
+
+A porta abre para um corredor curto que termina varios metros adiante em outra porta, semelhante a
+que voce acabou de passar. Voce tenta escutar algo, mas nao ouve nada. Voce experimenta a
+macaneta e ela gira, permitindo que voce entre em outro aposento de tamanho semelhante. Mas este
+aposento e esplendidamente decorado, com um assoalho de marmore polido e paredes asperas
+pintadas de branco. Ha um quadro pendurado em cada uma das quatro paredes, e ha outra porta na
+parede norte. Voce pode atravessar o aposento diretamente ate a porta (&90) ou pode parar
+para olhar os quadros (&25).$
+Digite 90 
+Digite 25 

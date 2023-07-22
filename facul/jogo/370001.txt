@@ -1,0 +1,9 @@
+
+A porta se abre e revela um pequeno aposento, que está sujo e mal cuidado. Um colchão de palha se
+encontra em um dos cantos. No centro do aposento há uma mesa de madeira, na qual brilha uma
+vela iluminando o ambiente com sua luz trêmula. Uma pequena caixa repousa sobre a mesa.
+Sentados em volta da mesa estão dois seres pequenos, com a pele cheia de verrugas e vestidos com
+armaduras de couro. Estão tomando algum tipo de bebida forte e, pelo jeito como se levantam
+cambaleantes quando você chega, demonstram estar muito embriagados. Você pode empunhar a sua
+espada e atacá-los (volte para 116) ou fechar a porta rapidamente e correr subindo pela passagem
+(volte para 42).$

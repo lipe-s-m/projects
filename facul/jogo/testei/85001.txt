@@ -1,0 +1,11 @@
+
+Voce esta novamente em uma encruzilhada.
+
+       Para seguir para o norte            &106
+       Para seguir para o sul              &373
+       Para seguir para o leste            &318
+       Para seguir para o oeste            &59$
+Digite 106 
+Digite 373 
+Digite 318 
+Digite 59 

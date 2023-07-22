@@ -1,0 +1,3 @@
+
+Afinal você chega ao final da trilha, em um encontro de três caminhos. Você pode ir para o oeste
+(vá para 257) ou para o leste (vá para 113).$

@@ -1,0 +1,10 @@
+
+Voce esta na extremidade sul de um corredor que vai do norte para o sul. Olhando para o norte,
+voce pode ver uma passagem que sai da parede leste. Voce quer:
+
+Seguir por esta passagem? & 52
+Verificar se ha outras passagens secretas enquanto segue para o norte? & 362
+Continuar para o sul, seguindo uma curva para o oeste? & 48$
+Digite 52 
+Digite 362 
+Digite 48 

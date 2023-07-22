@@ -1,0 +1,4 @@
+
+A passagem segue para o leste por vários metros e depois muda para o norte. Você anda por um
+bom tempo para o norte. Você pode verificar se por acaso há passagens secretas pelo caminho
+(volte para 260) ou simplesmente prosseguir para o norte (vá para 359).$

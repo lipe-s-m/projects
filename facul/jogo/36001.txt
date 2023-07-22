@@ -1,0 +1,7 @@
+
+A porta trancada abre-se violentamente e um mau cheiro insuportável chega às suas narinas. Dentro
+do aposento, o chão está coberto de ossos, vegetação apodrecida e lodo. Um velho de cabelos
+desgrenhados, vestido de trapos, salta sobre você gritando. Tem uma barba longa e grisalha e
+sacode um velho pé de cadeira de madeira. Ele simplesmente está louco, como parece, ou isto é
+algum tipo de armadilha? Você pode gritar com ele para tentar acalmá-lo (vá para 263) ou pegar na
+sua espada e atacá-lo (vá para 353).$

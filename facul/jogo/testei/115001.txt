@@ -1,0 +1,11 @@
+
+Os pobres coitados mortos a seus pes ate parecem felizes de terem sido aliviados do peso de Viver.
+Mas, ao olhar bem para eles, voce sente que nao e o unico a tomar conhecimento de suas mortes.
+Examinando o aposento, voce pode:
+
+       Investigar as armas espalhadas em volta           & 95
+       Ir ate o cadaver no canto nordeste                &313
+       Verificar os barris                               &330$
+Digite 95 
+Digite 313 
+Digite 330 

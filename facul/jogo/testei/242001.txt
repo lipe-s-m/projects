@@ -1,0 +1,15 @@
+ 
+A porta abre e revela um pequeno aposento na penumbra. As paredes sao
+cobertas de cortinas ornamentadas, com passamanarias de ouro e prata. Uma unica
+chama queima em um dos cantos, lancando luz sobre uma mesa baixa no meio do
+assoalho. Ha uma grande arca nessa mesa. Voce avanca para investigar a arca e de
+todos os lados, mas ao mesmo tempo de lugar nenhum, sai um som que enche o
+apartamento. Parece o estrondo de trovoes que se preparam para se transformar em
+uma tempestade. Voce se aproxima da arca e pode ver que tres fechaduras a mantem
+fechada. Conforme voce se aproxima, o ruido fica mais alto ainda. Voce:
+         Da um golpe de espada na caixa
+           para tentar corta-la em duas?                   &379
+         Procura em sua mochila para ver se
+           encontra chaves que possam servir?              &139$
+Digite 379 
+Digite 139 

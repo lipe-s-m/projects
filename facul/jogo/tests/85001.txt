@@ -1,0 +1,7 @@
+
+Você está novamente em uma encruzilhada.
+
+       Para seguir para o norte            Vá para 106
+       Para seguir para o sul              Vá para 373
+       Para seguir para o leste            Vá para 318
+       Para seguir para o oeste            Volte para 59$

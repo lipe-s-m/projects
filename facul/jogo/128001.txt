@@ -1,0 +1,4 @@
+
+Você ouve o profundo ruído de um ronco e o chão começa a tremer. Lenta e ruidosamente, a porta
+levadiça começa a subir para o teto. Você pode agora caminhar para a encruzilhada. Você seguirá
+para o oeste (vá para 210) ou para o leste (volte para 58)?$

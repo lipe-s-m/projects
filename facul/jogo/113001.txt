@@ -1,0 +1,3 @@
+
+Você chega a uma outra encruzilhada na passagem. Você pode seguir para o norte (vá para 285) ou
+continuar para o leste (volte para 78).$

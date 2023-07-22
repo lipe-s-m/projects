@@ -1,0 +1,4 @@
+
+À sua esquerda, na parte oeste da passagem, há uma porta de madeira rústica. Você pára junto a ela
+e ouve um som áspero que poderia ser de algum tipo de criatura roncando. Você quer abrir a porta?
+Em caso afirmativo, volte para 82. Se quiser seguir adiante para o norte, volte para 208.$

@@ -1,0 +1,6 @@
+
+A porta abre e você se encontra em uma espécie de cripta escura. O aposento é muito grande. Há
+um altar em uma das extremidades e vários caixões encontram-se espalhados pelo chão. Há uma
+porta atrás de você, na parede sul, e também outra na parede oeste. Se quiser investigar melhor o
+aposento, vá para 254. Se o lugar o deixa perturbado, você pode sair pela porta do oeste (vá para
+380).$

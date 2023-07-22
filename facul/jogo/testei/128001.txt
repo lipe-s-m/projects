@@ -1,0 +1,8 @@
+
+Voce ouve o profundo ruido de um ronco e o chao comeca a tremer. Lenta e ruidosamente, a porta
+levadica comeca a subir para o teto. Voce pode agora caminhar para a encruz
+
+ilhada. Voce seguira
+para o oeste (&210) ou para o leste (&58)?$
+Digite 210 
+Digite 58 

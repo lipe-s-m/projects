@@ -1,0 +1,6 @@
+
+No topo da escadaria, a passagem faz uma curva fechada para o leste. Quando você pára para
+recuperar as forças, ouve um rangido na rocha atrás de você. Você se vira a tempo de ver uma
+pesada porta levadiça tombar para trancar a passagem atrás de você. Você só pode seguir adiante
+agora! Você pode continuar em frente (volte para 48) ou verificar se há passagens secretas nas
+paredes (vá para 295).$

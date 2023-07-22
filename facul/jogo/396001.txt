@@ -1,0 +1,7 @@
+
+Com o Feiticeiro agora derrotado, você sabe que sua busca está quase no fim. Você se aproximada
+porta que tem duas fechaduras. Não há chaves por perto. Você tira duas chaves de sua mochila e as
+experimenta nas fechaduras. Elas giram! Você abre a porta e dá uma olhada em volta. Volte para
+242 Se você não tiver nenhuma chave, pode tentar derrubar a porta, o que você conseguirá se gastar
+quase toda a sua ENERGIA. Reduza a sua ENERGIA em 5 pontos e entre no aposento. Volte para
+242.$

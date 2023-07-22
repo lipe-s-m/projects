@@ -1,0 +1,3 @@
+
+Você está em um corredor que vai de leste para oeste. Se você for para leste, há uma curva que se
+dirige ao norte. Para tomar este caminho, vá para 391. Para seguir para o oeste, vá para 60.$

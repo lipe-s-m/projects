@@ -1,0 +1,8 @@
+
+Os pobres coitados mortos a seus pés até parecem felizes de terem sido aliviados do peso de Viver.
+Mas, ao olhar bem para eles, você sente que não é o único a tomar conhecimento de suas mortes.
+Examinando o aposento, você pode:
+
+       Investigar as armas espalhadas em volta           Volte para 95
+       Ir até o cadáver no canto nordeste                Vá para 313
+       Verificar os barris                               Vá para 330$

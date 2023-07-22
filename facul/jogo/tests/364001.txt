@@ -1,0 +1,4 @@
+
+Ao empurrar o cabo, um pequeno portal de pedra se abre. Você pode ignorá-lo e retornar à
+encruzilhada (volte para 256) ou pode passar por ele (vá para 373). Você tem que tomar uma
+decisão rapidamente, uma vez que a porta se fechará sozinha dentro de um minuto.$

@@ -1,0 +1,14 @@
+
+Você entrou em um aposento grande e quadrado. Vasos partidos estão espalhados por toda parte.
+Um grande vaso de argila está intacto e cheio de um líquido claro. Há uma grande tigela cheia de
+moedas de ouro. Quando você entra no aposento, a porta bate às suas costas e você se vira para se
+defrontar com um ser de aparência estranha - metade homem, metade touro - que olha fixamente
+para você. É um MINOTAURO, e ele está vindo na sua direção! Ele abaixa a cabeça, os chifres
+apontando para o seu peito, e ataca. Você terá que lutar contra ele:
+
+MINOTAURO             HABILIDADE 9          ENERGIA 9
+
+Depois de três Séries de Ataque, você manobra de forma a poder correr pela porta, depois de
+contornar o monstro. Se quiser Fugir nesse momento, volte para 54 e pague a penalidade de vida.
+Se continuar a lutar e conseguir matar o monstro, vá para 258. Se você já tiver passado por este
+aposento e matado o Minotauro, vai encontrá-lo vazio. Saia e volte para 54.$

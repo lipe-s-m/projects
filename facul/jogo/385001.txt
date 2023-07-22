@@ -1,0 +1,5 @@
+
+Você caminha na direção oeste por algum tempo, depois a passagem vira para o norte. Um pouco
+mais adiante, você chega a uma encruzilhada. Você pode seguir para o sul (volte para 114) ou para
+o oeste (volte para 297). Para o norte, a passagem termina em pouco tempo em um beco sem saída.
+Se você quiser seguir por aqui, vá para 398.$

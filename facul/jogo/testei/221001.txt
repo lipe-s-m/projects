@@ -1,0 +1,13 @@
+ 
+Quais sao estes objetos misteriosos que voce recolheu? Qual deles voce anotou
+primeiro na sua Lista de Equipamento?
+                A armadura?               &72
+                O escudo?                 &132
+                A espada?                 &27
+                O ouro?                   &110
+                O crucifixo?              &170$
+Digite 72 
+Digite 132 
+Digite 27 
+Digite 110 
+Digite 170 

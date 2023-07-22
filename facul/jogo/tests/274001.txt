@@ -1,0 +1,13 @@
+
+Você sai da caverna por um corredor longo e estreito. Depois de algumas centenas de metros, ele
+termina em uma grande porta de madeira que está entreaberta. Cautelosamente, você vai abrindo a
+porta um pouco mais e põe a cabeça por ela para ver o que há no aposento do outro lado. Você vê
+um velho pequeno sentado em uma mesa distraído e sozinho, jogando cartas. Ele parece uma boa
+alma inofensiva, de barba e cabelos grisalhos. Está sentado. O que você fará?
+
+       Irromper pela porta, com a espada na mão,
+          para surpreender o velho?                             Vá para 324
+       Bater na porta e entrar, cumprimentando o
+         velho educadamente?                                           Vá para 356
+       Agachar-se e tentar entrar no aposento de quatro
+         sem ser notado?                                        Volte para 98$

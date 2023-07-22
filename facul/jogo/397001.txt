@@ -1,0 +1,5 @@
+
+A porta abre e revela um pequeno aposento de chão de pedra e paredes sujas. Há um cheiro de mofo
+no ar. No centro do aposento, há uma mesa improvisada de madeira, em cima da qual está uma vela
+acesa. Sob a mesa, há uma pequena caixa. No canto mais distante do aposento, há um colchão de
+palha. Você pode abrir a caixa (volte para 240) ou sair do aposento (volte para 363).$

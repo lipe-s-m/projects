@@ -1,0 +1,18 @@
+
+Você acorda com a cabeça latejando e olha em volta. O aposento tem uns oito metros quadrados,
+com portas para o norte e para o sul. Você foi jogado no canto sudoeste. De pé, imóveis no centro
+do aposento, estão quatro homens. Pelo menos, eles parecem ser homens. Possuem uma pele de cor
+cinza-esverdeada. Suas roupas estão rasgadas e em farrapos - e estão todos olhando fixamente para
+o teto com olhos vazios. Um possui um porrete, outro uma foice, o terceiro uma picareta e o último
+um machado. Estão ignorando você completamente.
+
+Espalhadas pelo aposento, há várias armas do estilo camponês (forcados, cabos de machados, varas
+pontudas, etc.), um ou dois escudos e diversos barris. No canto nordeste, há um cadáver de um ser
+humano com uma espada em uma das mãos e um escudo na outra. Você toca a cabeça com a mão,
+em busca de sinais de sangue, e fica aliviado ao descobrir que você não está sangrando. Porém, ao
+mexer a mão, os estranhos seres que estão no centro do aposento viram os olhos na sua direção.
+Você:
+
+              Tenta conversar com eles?                           Vá para 268.
+              Fica de pé e os ataca com sua espada?               Vá para 282
+              Corre para escapar pela porta sul?                  Volte para 13.$

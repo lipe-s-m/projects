@@ -1,0 +1,11 @@
+
+A passagem termina em outra porta de madeira, desta vez uma pequena com uma maçaneta
+entalhada de osso. Você escuta, mas não ouve nada vindo do lado de dentro. Você tenta a maçaneta
+e a porta abre para um aposento em forma de uma pêra com um assoalho de pedra áspera, o que
+torna caminhar sobre ele de certa forma uma coisa desconfortável. Há uma pilha de detritos em um
+dos cantos, sobretudo poeira e pedras, mas há também dois pedaços de madeira de formato
+incomum e um pedaço de corda. Uma porta na parede norte dá para fora. Você:
+
+       Examinará os pedaços de madeira?           Vá para 328
+       Analisará o pedaço de corda?               Volte para 125
+       Sairá pela porta norte?                    Volte para 73$

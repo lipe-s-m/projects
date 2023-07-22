@@ -1,0 +1,9 @@
+
+A porta abre e você entra em um pequeno compartimento. Seus olhos se arregalam quando você
+olha em volta e vê que as paredes do compartimento são cobertas por trabalhos elaborados em
+pedra. Mosaicos e baixo-relevos em mármore conferem a este aposento um tipo de beleza que você
+jamais tinha visto antes. Em um canto do aposento há uma grande estátua de metal, representando
+uma criatura de um olho só. Em seu único olho há uma jóia cintilante. Como não parece haver
+nenhum outro caminho para sair do aposento, você terá que voltar à encruzilhada - mas aquela
+grande jóia é muito tentadora. Você vai deixá-la onde está e retornar à encruzilhada (volte para 93)
+ou tentará levar a jóia com você (vá para 338)?$

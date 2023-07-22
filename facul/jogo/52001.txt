@@ -1,0 +1,11 @@
+
+Você está de pé em uma encruzilhada em forma de T, onde uma passagem para leste sai de um
+corredor que vai do norte para o sul.
+
+     Para ir para o sul                           Vá para 391
+     Para verificar se há passagens
+        secretas no caminho para o sul            Vá para 362
+     Para ir para o norte                         Vá para 354
+     Para verificar se há passagens secretas
+        no caminho para o norte                   Vá para 234
+     Para ir para o leste                         Vá para 291$

@@ -1,0 +1,12 @@
+
+Você se aproxima da estátua cautelosamente. Um ruído de passos rápidos atrás de você faz com que
+você se vire rapidamente... mas é apenas uma ratazana. Você tenta puxar a jóia, mas ela está
+solidamente presa. Você experimenta enfiar a sua espada por trás dela e, ao fazer isso, ouve uma
+fatídica sequência de rangidos. Para seu horror, a estátua começa a se mexer! Você recua de um
+salto e desembainha a espada. O CICLOPE DE FERRO move a cabeça na sua direção e desce de
+seu pedestal. Você terá que lutar!
+
+CICLOPEDE FERRO              HABILIDADE 10          ENERGIA 10
+
+Se você vencer, volte para 75. Se quiser Fugir durante o combate, pode correr pela porta de volta à
+encruzilhada. Volte para 93.$

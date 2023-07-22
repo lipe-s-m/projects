@@ -1,0 +1,3 @@
+
+Em pé na encruzilhada, você pode ir para o norte (vá para 366), para o oeste (volte para 11) ou para
+o sul (vá para 277).$

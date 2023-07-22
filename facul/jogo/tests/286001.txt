@@ -1,0 +1,10 @@
+
+Uma escadaria estreita cortada na rocha desce cerca de vinte degraus. No pé da escada, uma
+passagem leva a uma grande câmara aberta. Esta câmara cheira mal, tem cheiro de carne podre. O
+cheiro é tão ruim que você sente vontade de voltar. Há três corpos na câmara. Você pode revistar os
+cadáveres ou sair silenciosamente na ponta dos pés, atravessando o aposento. Você:
+
+       Revista o primeiro corpo?                          Vá para 294
+       Revista o segundo corpo?                           Volte para 275
+       Revista o terceiro corpo?                          Volte para 148
+       Atravessa o aposento na ponta dos pés?             Volte para 107$

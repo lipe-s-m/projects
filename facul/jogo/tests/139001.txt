@@ -1,0 +1,11 @@
+
+Durante a sua aventura, você deverá ter encontrado diversas chaves e provavelmente terá recolhido
+algumas delas. Você pode agora usar três destas chaves para tentar abrir as fechaduras da arca.
+
+Cada chave está identificada por um número. Para determinar se você tem as chaves certas, some
+seus três números. Agora vá até a seção que possui o mesmo número que este total, onde você
+descobrirá se usou as chaves corretas.
+
+Se você não tiver três chaves numeradas, então chegou ao fim de sua jornada. Você senta na arca e
+chora ao tomar consciência de que terá que explorar a montanha mais uma vez a fim de encontrar as
+tais chaves.$

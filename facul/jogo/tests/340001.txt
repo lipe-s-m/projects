@@ -1,0 +1,8 @@
+
+Você tenta vários itens do equipamento contra o poder do olhar do quadro, mas nenhum parece
+funcionar. Você pode tentar qualquer um desses, se os tiver:
+
+       Cortar o quadro a golpes de espada                  Vá para 388
+       Segurar uma jóia à sua frente                       Volte para 31
+       Enterrar uma estaca de madeira no quadro.           Volte para 241
+       Jogar um queijo no quadro                           Volte para 45$

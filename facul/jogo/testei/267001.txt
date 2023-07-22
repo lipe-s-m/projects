@@ -1,0 +1,10 @@
+ 
+Voce agora esta novamente em uma encruzilhada.
+         Para seguir para o norte             &312
+         Para seguir para o sul               &246
+         Para seguir para o oeste             &79
+         Para seguir para o leste             &349$
+Digite 312 
+Digite 246 
+Digite 79 
+Digite 349 

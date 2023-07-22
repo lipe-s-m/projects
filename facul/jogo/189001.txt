@@ -1,0 +1,8 @@
+
+A porta abre para um corredor curto que termina vários metros adiante em outra porta, semelhante à
+que você acabou de passar. Você tenta escutar algo, mas não ouve nada. Você experimenta a
+maçaneta e ela gira, permitindo que você entre em outro aposento de tamanho semelhante. Mas este
+aposento é esplendidamente decorado, com um assoalho de mármore polido e paredes ásperas
+pintadas de branco. Há um quadro pendurado em cada uma das quatro paredes, e há outra porta na
+parede norte. Você pode atravessar o aposento diretamente até a porta (volte para 90) ou pode parar
+para olhar os quadros (volte para 25).$

@@ -1,0 +1,9 @@
+
+Você vasculha sua mochila. O que há lá dentro? Você pode tentar usar qualquer um dos itens que se
+seguem, se você os tiver em sua Lista de Equipamentos:
+
+       Poção de Invisibilidade              Volte para 39
+       O Olho do Ciclope                    Vá para 382
+       Um pedaço de Queijo                  Vá para 368
+       Arco com Flecha de Prata             Vá para 194
+       Uma Vara em Forquilha                Vá para 215$

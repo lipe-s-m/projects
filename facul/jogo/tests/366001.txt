@@ -1,0 +1,5 @@
+
+Você está seguindo por uma passagem que o leva mais adiante para o norte. Depois de vários
+metros, ela vira em um ângulo fechado para o leste. Você continua nesta direção até que acaba por
+chegar a uma abertura estreita na parede norte. Você pode passar por esta abertura (volte para 89)
+ou continuar para o leste (volte para 62).$

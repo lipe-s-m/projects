@@ -1,0 +1,9 @@
+
+Você está parado bem na curva da passagem, de onde você pode seguir para o oeste ou para o sul.
+
+       Para seguir para o oeste                   Volte para 308
+       Para seguir para o sul                     Volte para 52
+       Se quiser verificar se há passagens
+           secretas no caminho para o oeste       Volte para 14
+       Se quiser verificar se há passagens
+           secretas no caminho para o sul,        Volte para 234$

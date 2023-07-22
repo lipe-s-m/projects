@@ -1,0 +1,3 @@
+
+Você chega a uma outra encruzilhada na passagem. Se quiser tomar a direção oeste, volte para 235.
+Se preferir seguir para o leste, volte para 323.$

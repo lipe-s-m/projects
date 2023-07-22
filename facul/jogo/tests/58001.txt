@@ -1,0 +1,5 @@
+
+Cuidadosamente, você se afasta pela passagem. Depois de um curto período de tempo, ela faz uma
+curva fechada para o norte. Na curva, há um banco de madeira sólida e, acima do banco, um aviso
+que diz: “Descanse Aqui, Fatigado Viajante.” Aqui você pode parar e comer umas Provisões, se
+você quiser (volte para 15), ou pode continuar (vá para 367).$

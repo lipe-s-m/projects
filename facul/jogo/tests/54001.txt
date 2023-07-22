@@ -1,0 +1,3 @@
+
+Você está junto a uma porta na extremidade norte de uma passagem que vai do norte para o sul.
+Para ir para o sul, vá para 308. Para passar pela porta, vá para 179.$
