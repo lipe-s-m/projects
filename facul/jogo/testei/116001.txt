@@ -1,12 +1,9 @@
 
-Os dois ORCAS bebados que voce esta enfrentando agora estao evidentemente espantados com a
-sua entrada e, tao rapido quanto sao capazes, saem em busca de armas. Voce tem que atacar um de
-cada vez. A bebedeira deles permite que voce acrescente 1 ponto ao resultado do dado quando jogar
-para estabelecera sua Forca de Ataque, durante cada Serie de Ataques.
+Os dois ORCS bebados que voce esta enfrentando agora estao evidentemente espantados com a
+sua entrada e, tao rapido quanto sao capazes, saem em busca de armas. A bebedeira deles permite que voce acrescente 1 de dano a mais neles.
 
                             HABILIDADE              ENERGIA
-Primeiro ORCA                    5                     4
-Segundo ORCA                     5                     5
+ORCS BEBADOS                     5                     4
 
 Se voce vencer a batalha, &378. Se voce quiser Fugir durante a batalha, pode fazer isso
 voltando para 42.$

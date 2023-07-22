@@ -6,7 +6,7 @@ fatidica sequencia de rangidos. Para seu horror, a estatua comeca a se mexer! Vo
 salto e desembainha a espada. O CICLOPE DE FERRO move a cabeca na sua direcao e desce de
 seu pedestal. Voce tera que lutar!
 
-CICLOPEDE FERRO              HABILIDADE 10          ENERGIA 10
+CICLOPE DE FERRO              HABILIDADE 10          ENERGIA 10
 
 Se voce vencer, & 75. Se quiser Fugir durante o combate, pode correr pela porta de volta a
 encruzilhada. & 93.$

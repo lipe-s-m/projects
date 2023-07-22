@@ -2,7 +2,10 @@
 Ha uma curva na passagem para a direita, levando para o norte. Cautelosamente, voce se aproxima
 de um posto de sentinela em um canto e, ao olhar para dentro, ve um ser estranho, parecido com um
 Goblin, vestido de armadura de couro e adormecido em seu posto. Voce tenta passar por ele na
-ponta dos pes. Teste a sua Sorte. Se voce tiver sorte, ele nao acorda e continua a roncar alto - va
-para 301. Se voce nao tiver sorte, voce pisa em terreno mole e faz um barulho, e os olhos do ser se
-abrem instantaneamente - &248.$
+ponta dos pes. 
+Teste a sua Sorte. Se voce tiver sorte, ele nao acorda e continua a roncar alto - va
+para 208. 
+Se voce nao tiver sorte, voce pisa em terreno mole e faz um barulho, e os olhos do ser se
+abrem instantaneamente - va para 248.$
+digite 208
 Digite 248 

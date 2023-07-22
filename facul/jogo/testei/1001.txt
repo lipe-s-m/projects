@@ -21,6 +21,5 @@ cautelosamente pela escuridao. Teias de aranha tocam seu rosto e voce ouve a mov
 de pes minusculos: muito provavelmente, ratazanas. Voce adentra a caverna. Depois de uns
 poucos metros, chega logo a uma encruzilhada. Voce vai virar para o oeste (&71) ou
 para o leste (&278)?$
-Digite 71 
-Digite 278
-
+Digite 71: <--
+Digite 278: -->

@@ -152,7 +152,7 @@ void salvar_jogo(PERSONAGEM jogador1)
 }
 PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
 {
-    FILE *entrada, *ir;
+    FILE *entrada, *ir, *ent;
     char p[20], c;
     char *u;
     char inicio[5] = "0000";
@@ -176,8 +176,8 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
     strcpy(jogador1.posicao, page);
     printf("\nPara onde voce deseja ir, %s?\n     >>> ", jogador1.nome);
     scanf("%s", page);
-    jogador1 = compare(page, jogador1);
-    jogador1 = combate(page, jogador1);
+    // jogador1 = compare(page, jogador1);
+    // jogador1 = combate(page, jogador1);
 
     limpar_tela();
     char arquivo[20];
@@ -191,7 +191,18 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
     // ir = fopen()
     if(entrada == NULL)
     {
-        perror("Caminho Inválido");
+        printf("Caminho Inválido");
+        strcpy(page, jogador1.posicao);
+        strcat(jogador1.posicao, txt); 
+        ent = fopen(jogador1.posicao, "r");
+        while(!feof(ent))
+        {
+            fscanf(ent, "%c", &c);
+            if(c != '$')
+                printf("%c", c);        
+        }
+        printf("oi");
+        fclose(ent);
         return ler_pagina(page, jogador1);
     }
     while(!feof(entrada))
@@ -214,7 +225,7 @@ PERSONAGEM compare(char *page, PERSONAGEM jogador1)
 }
 PERSONAGEM combate(char *page, PERSONAGEM jogador1)
 {
-    if(strcmp(page, "338") == 0 || strcmp(page, "371") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, ""))
+    if(strcmp(page, "240") == 0 || strcmp(page, "116") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, ""))
     {
 
     }
