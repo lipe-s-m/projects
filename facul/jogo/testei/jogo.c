@@ -23,7 +23,13 @@ typedef struct _PERSONAGEM
 
 } PERSONAGEM;
 
-int jogar_dado(int n);
+typedef struct _INIMIGO
+{
+    int habilidade, energia;
+    char nome[25];
+}INIMIGO;
+
+int jogar_dado(PERSONAGEM jogador1, INIMIGO *npc);
 PERSONAGEM dado_inicio(PERSONAGEM);
 void press();
 void limpar_tela();
@@ -40,6 +46,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM);
 
 int main()
 {
+    INIMIGO npc[5];
     srand(time(NULL));
     setlocale(LC_ALL, "portuguese");
     PERSONAGEM jogador1;
@@ -58,13 +65,6 @@ int main()
         comando = toupper(comando);
         switch (comando)
         {
-        case 'A':
-        
-            jogar_dado(d);
-            printf("%s", jogador1.posicao);
-            press();
-
-            break;
         case 'I':
             printf("%s, voce tem %d vidas, classe %s", jogador1.nome, jogador1.vida, jogador1.classe);
             press();
@@ -175,7 +175,8 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
     scanf("%s", page);
     
     // jogador1 = compare(page, jogador1);
-    // jogador1 = combate(page, jogador1);
+    if(strcmp(page, "240") == 0)
+        combate(page, jogador1);
     if(strcmp(page, "10") == 0 || strcmp(page, "11") == 0)
         final(page, jogador1);
     if(strcmp(page, "278") == 0)
@@ -265,6 +266,7 @@ PERSONAGEM morte(char *page, PERSONAGEM jogador1)
     char c, txt[8] = "001.txt";
     int opcao = 1;
     morreu = fopen("morte.txt", "r");
+    limpar_tela();
     if(morreu == NULL)
     {
         printf("Voce morreu!");
@@ -287,12 +289,9 @@ PERSONAGEM morte(char *page, PERSONAGEM jogador1)
         }
 
         press();
-        
-        return ler_pagina(page, jogador1);
+        limpar_tela();
     }
     
-    if(strcmp(page, "12001.txt") == 0)
-    {
         while(!feof(morreu))
         {
             fscanf(morreu, "%c", &c);
@@ -315,7 +314,7 @@ PERSONAGEM morte(char *page, PERSONAGEM jogador1)
         limpar_tela();
         remove("gravar.dat");
         return carregar_jogo(&opcao, jogador1);
-    }
+    
 
 }
 
@@ -328,9 +327,59 @@ PERSONAGEM compare(char *page, PERSONAGEM jogador1)
 }
 PERSONAGEM combate(char *page, PERSONAGEM jogador1)
 {
-    if(strcmp(page, "240") == 0 || strcmp(page, "116") || strcmp(page, "338") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, ""))
-    {
+    limpar_tela();
+    int dano;
+    FILE *entrada;
+    char txt[8] = "001.txt", temp[10];
+    strcat(page, txt);
+    entrada = fopen(page, "r");
+    char c;
+    INIMIGO npc[4];
 
+    strcpy(npc[1].nome, "Serpente");
+    npc[1].energia = 5;
+    npc[1].habilidade = 5;
+
+    if(strcmp(page, "240001.txt") == 0)
+    {
+        while(!feof(entrada))
+        {
+            fscanf(entrada, "%c", &c);
+            if(c != '$')
+                printf("%c", c);        
+        }
+        printf("Digite qualquer tecla para comecar o combate!  ");
+        scanf("%s", temp);
+        limpar_tela();
+        while(jogador1.atributo.energia > 0 && npc[1].energia > 0)
+        {
+            dano = jogar_dado(jogador1, npc);
+            if(dano == 1)
+                npc[1].energia -= 2;
+            if(dano == 2)
+                jogador1.atributo.energia -=2;
+        }
+        if(jogador1.atributo.energia <= 0)
+        {
+            limpar_tela();
+            printf("A Serpente te envolve no corpo dela, esmagando seus ossos\nEla enfia suas presas afiadas em seu cranio...");
+            press();
+            morte(page, jogador1);
+        }
+        fclose(entrada);
+        limpar_tela();
+        FILE *vitoria;
+        vitoria = fopen("ganhou.txt", "r");
+        while(!feof(vitoria))
+        {
+            fscanf(vitoria, "%c", &c);
+            if(c != '$')
+                printf("%c", c);        
+        }
+        press();
+        fclose(vitoria);
+        strcpy(page, "145");
+        return jogador1;
     }
 }
 void press()
@@ -345,20 +394,35 @@ void limpar_tela()
     fflush(stdin);
 }
 
-int jogar_dado(int n)
+int jogar_dado(PERSONAGEM jogador1, INIMIGO *npc)
 {
+    printf("------------------------------");
+    printf("\n%s        \t|\t%d\n", jogador1.nome, jogador1.atributo.energia);
+    printf("\n%s\t|\t%d\n", npc[1].nome, npc[1].energia);
+    printf("------------------------------\n \n \n");
 
-    int dado;
-    dado = (rand() % 6) +1;
-   
-    if(dado > 3)
-        printf("Voce tirou %d no dado, deu dano!", dado);
+    int dado1, dado2, dano = 0;
+    dado1 = (rand() % 6) +1;
+    dado2 = (rand() % 6) +1;
+
+    if(dado1 + jogador1.atributo.habilidade > dado2 + npc[1].habilidade)
+    {
+        printf("%s tirou %d no dado \t %s tirou %d no dado\n", jogador1.nome, dado1, npc[1].nome, dado2);
+        printf("Voce deu dano!\n");
+        press();
+        limpar_tela();
+        return 1;
+
+    }
     else
-        printf("Voce tirou %d no dado, nao deu dano!", dado);
-
-
-    
-    return dado;
+    {
+        printf("%s tirou %d no dado \t %s tirou %d no dado\n", jogador1.nome, dado1, npc[1].nome, dado2);
+        printf("Voce nao deu dano!\n");
+        press();
+        limpar_tela();
+        return 2;
+    }
+   
 }
 
 void imprimir_menu()
@@ -444,7 +508,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                         break;    
                     case '2':
                     
-                        printf("\n    A classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 12 de habilidade, {2*dado} + 5 de energia e {dado} + 6 de sorte <-\n\n");
+                        printf("\n    A classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 8 de habilidade, {2*dado} + 5 de energia e {dado} + 6 de sorte <-\n\n");
                         printf("Ideal para jogadores mais corajosos, possui menos resistencia, porem, tem maior chance de conseguir realizar com sucesso suas escolhas.\n \n \n");
                         printf("Deseja selecionar a classe Assassino?");
                         printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
