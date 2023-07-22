@@ -1,5 +1,5 @@
 
 Depois de alguns metros, voce chega a outra juncao de tres caminhos. Voce pode ir na direcao norte
-(& 8) ou na direcao leste (& 255).$
-Digite 8 
+(& 9) ou na direcao leste (& 255).$
+Digite 9 
 Digite 255 

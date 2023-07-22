@@ -2,6 +2,6 @@
 Cuidadosamente, voce se afasta pela passagem. Depois de um curto periodo de tempo, ela faz uma
 curva fechada para o norte. Na curva, ha um banco de madeira solida e, acima do banco, um aviso
 que diz: "Descanse Aqui, Fatigado Viajante." Aqui voce pode parar e comer umas Provisoes, se
-voce quiser (&15), ou pode continuar (&367).$
+voce quiser (&15), ou se quiser ignorar e continuar seu caminho (&323).$
 Digite 15 
-Digite 367 
+Digite 323 
