@@ -1,14 +1,3 @@
-
-Voce vasculha sua mochila. O que ha la dentro? Voce pode tentar usar qualquer um dos itens que se
-seguem, se voce os tiver em sua Lista de Equipamentos:
-
-       Pocao de Invisibilidade              Digite  39
-       O Olho do Ciclope                    Digite 382
-       Um pedaco de Queijo                  Digite 368
-       Arco com Flecha de Prata             Digite 194
-       Uma Vara em Forquilha                Digite 215$
-Digite 39 
-Digite 382 
-Digite 368 
-Digite 194 
-Digite 215 
+Voce consegue derrotar os Goblins, porem, ao libertar o anao, ele sai correndo e acaba esbarrando
+num botao. Esse botao abre uma escotilha e liberta 10 leoes enlouquecidos.
+Os leoes famintos agora tem uma nova refeicao, eles pulam em cima de voce e te fazem de jantar!$

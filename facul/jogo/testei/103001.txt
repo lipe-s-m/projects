@@ -2,7 +2,8 @@ Você entra na sala, ergue sua espada, e corre em direcao aos goblins.
 Os goblins parecem estar felizes em te ver, eles acham que voce sera
 mais um brinquedo pra eles.
 
-                            HABILIDADE              ENERGIA
-Goblins Insanos                 6                      4
+||==================================================||
+|| Goblins Insanos     HABILIDADE 10     ENERGIA 6  ||
+||==================================================||
 
 $

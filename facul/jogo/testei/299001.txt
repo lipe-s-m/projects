@@ -1,7 +1,0 @@
- 
-A passagem segue para o leste por varios metros e depois muda para o norte.
-Voce anda por um bom tempo para o norte. Voce pode verificar se por acaso ha
-passagens secretas pelo caminho (Digite 260) ou simplesmente prosseguir para o
-norte (Digite 359).$
-Digite 260 
-Digite 359 

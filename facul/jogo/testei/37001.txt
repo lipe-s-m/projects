@@ -1,6 +1,0 @@
-
-Em pe na encruzilhada, voce pode ir para o norte (Digite 366), para o oeste (Digite  11) ou para
-o sul (Digite 277).$
-Digite 366 
-Digite 11 
-Digite 277 

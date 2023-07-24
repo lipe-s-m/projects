@@ -1,5 +1,0 @@
-
-Voce esta em um corredor que vai de leste para oeste. Se voce for para leste, ha uma curva que se
-dirige ao norte. Para tomar este caminho, Digite 391. Para seguir para o oeste, Digite 60.$
-Digite 391 
-Digite 60 
