@@ -2,11 +2,11 @@
 Voce vasculha sua mochila. O que ha la dentro? Voce pode tentar usar qualquer um dos itens que se
 seguem, se voce os tiver em sua Lista de Equipamentos:
 
-       Pocao de Invisibilidade              & 39
-       O Olho do Ciclope                    &382
-       Um pedaco de Queijo                  &368
-       Arco com Flecha de Prata             &194
-       Uma Vara em Forquilha                &215$
+       Pocao de Invisibilidade              Digite  39
+       O Olho do Ciclope                    Digite 382
+       Um pedaco de Queijo                  Digite 368
+       Arco com Flecha de Prata             Digite 194
+       Uma Vara em Forquilha                Digite 215$
 Digite 39 
 Digite 382 
 Digite 368 

@@ -1,5 +1,5 @@
 
-Para descobrir o segredo do segundo item que voce recolheu, & 221 para investigar. Se
-voce ja investigou ambos os itens, & 81.$
+Para descobrir o segredo do segundo item que voce recolheu, Digite  221 para investigar. Se
+voce ja investigou ambos os itens, Digite  81.$
 Digite 221 
 Digite 81 

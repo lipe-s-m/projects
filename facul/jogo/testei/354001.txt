@@ -1,12 +1,12 @@
 
 Voce esta parado bem na curva da passagem, de onde voce pode seguir para o oeste ou para o sul.
 
-   Para seguir para o oeste                   & 308
-   Para seguir para o sul                     & 52
+   Para seguir para o oeste                   Digite  308
+   Para seguir para o sul                     Digite  52
    Se quiser verificar se ha passagens
-       secretas no caminho para o oeste       & 14
+       secretas no caminho para o oeste       Digite  14
    Se quiser verificar se ha passagens
-       secretas no caminho para o sul,        & 234$
+       secretas no caminho para o sul,        Digite  234$
 Digite 308 
 Digite 52 
 Digite 14 

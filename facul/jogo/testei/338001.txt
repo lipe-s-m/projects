@@ -8,7 +8,7 @@ seu pedestal. Voce tera que lutar!
 
 CICLOPE DE FERRO              HABILIDADE 10          ENERGIA 25
 
-Se voce vencer, & 75. Se quiser Fugir durante o combate, pode correr pela porta de volta a
-encruzilhada. & 93.$
+Se voce vencer, Digite  75. Se quiser Fugir durante o combate, pode correr pela porta de volta a
+encruzilhada. Digite  93.$
 Digite 75 
 Digite 93 

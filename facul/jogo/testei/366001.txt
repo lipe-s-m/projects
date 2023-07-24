@@ -1,7 +1,7 @@
 
 Voce esta seguindo por uma passagem que o leva mais adiante para o norte. Depois de varios
 metros, ela vira em um angulo fechado para o leste. Voce continua nesta direcao ate que acaba por
-chegar a uma abertura estreita na parede norte. Voce pode passar por esta abertura (& 89)
-ou continuar para o leste (& 62).$
+chegar a uma abertura estreita na parede norte. Voce pode passar por esta abertura (Digite  89)
+ou continuar para o leste (Digite  62).$
 Digite 89 
 Digite 62 

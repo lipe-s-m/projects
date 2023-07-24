@@ -2,13 +2,13 @@
 Voce esta de pe em uma encruzilhada em forma de T, onde uma passagem para leste sai de um
 corredor que vai do norte para o sul.
 
-     Para ir para o sul                           &391
+     Para ir para o sul                           Digite 391
      Para verificar se ha passagens
-        secretas no caminho para o sul            &362
-     Para ir para o norte                         &354
+        secretas no caminho para o sul            Digite 362
+     Para ir para o norte                         Digite 354
      Para verificar se ha passagens secretas
-        no caminho para o norte                   &234
-     Para ir para o leste                         &291$
+        no caminho para o norte                   Digite 234
+     Para ir para o leste                         Digite 291$
 Digite 391 
 Digite 362 
 Digite 354 

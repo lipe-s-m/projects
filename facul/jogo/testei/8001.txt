@@ -7,6 +7,6 @@ brandindo uma grande arma. Trata-se de um BARBARO louco e voce tera que lutar co
 BARBARO HABILIDADE 7 ENERGIA 6
 
 Ha uma porta na parede norte do outro lado atraves da qual voce pode Fugir durante o confronto
-(&189). Se voce derrotar o Barbaro, &273.$
+(Digite 189). Se voce derrotar o Barbaro, Digite 273.$
 Digite 189 
 Digite 273 

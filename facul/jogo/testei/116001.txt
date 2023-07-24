@@ -5,6 +5,6 @@ sua entrada e, tao rapido quanto sao capazes, saem em busca de armas. A bebedeir
                             HABILIDADE              ENERGIA
 ORCS BEBADOS                     5                     4
 
-Se voce vencer a batalha, &378. Se voce quiser Fugir durante a batalha, pode fazer isso
+Se voce vencer a batalha, Digite 378. Se voce quiser Fugir durante a batalha, pode fazer isso
 voltando para 42.$
 Digite 378 

@@ -4,10 +4,10 @@ pe da escada, uma passagem leva a uma grande camara aberta. Esta camara
 cheira mal, tem cheiro de carne podre. O cheiro e tao ruim que voce sente
 vontade de voltar. Ha tres corpos na camara. Voce pode revistar os cadaveres
 ou sair silenciosamente na ponta dos pes, atravessando o aposento. Voce:
-         Revista o primeiro corpo?                          &294
-         Revista o segundo corpo?                           &275
-         Revista o terceiro corpo?                          &148
-         Atravessa o aposento na ponta dos pes?             &107$
+         Revista o primeiro corpo?                          Digite 294
+         Revista o segundo corpo?                           Digite 275
+         Revista o terceiro corpo?                          Digite 148
+         Atravessa o aposento na ponta dos pes?             Digite 107$
 Digite 294 
 Digite 275 
 Digite 148 

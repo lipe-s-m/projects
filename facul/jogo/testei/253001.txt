@@ -6,9 +6,9 @@ pera com um assoalho de pedra aspera, o que torna caminhar sobre ele de certa
 forma uma coisa desconfortavel. Ha uma pilha de detritos em um dos cantos,
 sobretudo poeira e pedras, mas ha tambem dois pedacos de madeira de formato
 incomum e um pedaco de corda. Uma porta na parede norte da para fora. Voce:
-         Examinara os pedacos de madeira?           &328
-         Analisara o pedaco de corda?               &125
-         Saira pela porta norte?                    &73$
+         Examinara os pedacos de madeira?           Digite 328
+         Analisara o pedaco de corda?               Digite 125
+         Saira pela porta norte?                    Digite 73$
 Digite 328 
 Digite 125 
 Digite 73 

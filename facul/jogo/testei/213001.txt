@@ -1,8 +1,8 @@
 
 A porta esta trancada. Voce pode tentar derruba-la jogando dois dados. Se o
 numero obtido for igual ou menor do que o seu indice de HABILIDADE, a porta cede
-e abre - &36. Se o numero for maior do que o seu indice de HABILIDADE, a porta
+e abre - Digite 36. Se o numero for maior do que o seu indice de HABILIDADE, a porta
 permanece trancada, voce perde 1 ponto de ENERGIA pelo ombro machucado e tera
-que prosseguir pela passagem - &314.$
+que prosseguir pela passagem - Digite 314.$
 Digite 36 
 Digite 314 

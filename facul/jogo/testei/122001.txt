@@ -13,9 +13,9 @@ em busca de sinais de sangue, e fica aliviado ao descobrir que voce nao esta san
 mexer a mao, os estranhos seres que estao no centro do aposento viram os olhos na sua direcao.
 Voce:
 
-              Tenta conversar com eles?                           &268.
-              Fica de pe e os ataca com sua espada?               &282
-              Corre para escapar pela porta sul?                  &13.$
+              Tenta conversar com eles?                           Digite 268.
+              Fica de pe e os ataca com sua espada?               Digite 282
+              Corre para escapar pela porta sul?                  Digite 13.$
 Digite 268 
 Digite 282 
 Digite 13 

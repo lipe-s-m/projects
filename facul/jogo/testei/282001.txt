@@ -11,5 +11,5 @@ enfrentar os outros tres (lute com um de cada vez):
 ZUMBI com foice                   6                     6
 ZUMBI com picareta                6                     6
 ZUMBI com machado                 6                     5
-Se voce derrotar os quatro, &115.$
+Se voce derrotar os quatro, Digite 115.$
 Digite 115 

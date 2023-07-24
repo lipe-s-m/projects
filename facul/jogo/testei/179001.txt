@@ -9,9 +9,9 @@ apontando para o seu peito, e ataca. Voce tera que lutar contra ele:
 MINOTAURO             HABILIDADE 9          ENERGIA 9
 
 Depois de tres Series de Ataque, voce manobra de forma a poder correr pela porta, depois de
-contornar o monstro. Se quiser Fugir nesse momento, &54 e pague a penalidade de vida.
-Se continuar a lutar e conseguir matar o monstro, &258. Se voce ja tiver passado por este
-aposento e matado o Minotauro, vai encontra-lo vazio. Saia e &54.$
+contornar o monstro. Se quiser Fugir nesse momento, Digite 54 e pague a penalidade de vida.
+Se continuar a lutar e conseguir matar o monstro, Digite 258. Se voce ja tiver passado por este
+aposento e matado o Minotauro, vai encontra-lo vazio. Saia e Digite 54.$
 Digite 54 
 Digite 258 
 Digite 54 

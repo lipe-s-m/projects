@@ -19,7 +19,7 @@ Voce da uma primeira olhada na penumbra e ve-paredes escuras e umidas com pocas 
 chao de pedra a sua frente. O ar e frio e umido. Voce acende a sua lanterna e avanca
 cautelosamente pela escuridao. Teias de aranha tocam seu rosto e voce ouve a movimentacao
 de pes minusculos: muito provavelmente, ratazanas. Voce adentra a caverna. Depois de uns
-poucos metros, chega logo a uma encruzilhada. Voce vai virar para o oeste (&71) ou
-para o leste (&278)?$
+poucos metros, chega logo a uma encruzilhada. Voce vai virar para o oeste (Digite 71) ou
+para o leste (Digite 278)?$
 Digite 71: <--
 Digite 278: -->

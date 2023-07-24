@@ -1,6 +1,6 @@
 
 Ao empurrar o cabo, um pequeno portal de pedra se abre. Voce pode ignora-lo e retornar a
-encruzilhada (& 256) ou pode passar por ele (&373). Voce tem que tomar uma
+encruzilhada (Digite  256) ou pode passar por ele (Digite 373). Voce tem que tomar uma
 decisao rapidamente, uma vez que a porta se fechara sozinha dentro de um minuto.$
 Digite 256 
 Digite 373 

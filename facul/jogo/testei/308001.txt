@@ -3,10 +3,10 @@ Voce esta de pe em uma encruzilhada. Para o oeste, a passagem segue por uns pouc
 para o norte. Para o norte, a passagem termina em uma porta. Para o leste, a passagem continua e
 acaba por tomar a direcao sul. Olhando para o sul, a passagem se estende ate onde a vista alcance.
  
-   Para ir para o oeste          & 187
-   Para ir para o norte          & 54
-   Para ir para o sul            & 160
-   Para ir para o leste          &354$
+   Para ir para o oeste          Digite  187
+   Para ir para o norte          Digite  54
+   Para ir para o sul            Digite  160
+   Para ir para o leste          Digite 354$
 Digite 187 
 Digite 54 
 Digite 160 

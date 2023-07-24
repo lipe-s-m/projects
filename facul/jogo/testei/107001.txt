@@ -1,7 +1,7 @@
 
 Voce atravessa o aposento na ponta dos pes, sobe uma escada estreita cujo topo leva a uma
 passagem. "Foi facil", voce pensa, e comeca a se perguntar se teria valido a pena revistar os corpos.
-Se voce quiser retornar e revistar os corpos, comecando com o terceiro, &148. Se quiser
-seguir adiante, &197.$
+Se voce quiser retornar e revistar os corpos, comecando com o terceiro, Digite 148. Se quiser
+seguir adiante, Digite 197.$
 Digite 148 
 Digite 197 

@@ -7,11 +7,11 @@ pequeno sentado em uma mesa distraido e sozinho, jogando cartas. Ele parece
 uma boa alma inofensiva, de barba e cabelos grisalhos. Esta sentado. O que voce
 fara?
          Irromper pela porta, com a espada na mao,
-            para surpreender o velho?                             &324
+            para surpreender o velho?                             Digite 324
          Bater na porta e entrar, cumprimentando o
-            velho educadamente?                                           &356
+            velho educadamente?                                           Digite 356
          Agachar-se e tentar entrar no aposento de quatro
-            sem ser notado?                                        &98$
+            sem ser notado?                                        Digite 98$
 Digite 324 
 Digite 356 
 Digite 98 

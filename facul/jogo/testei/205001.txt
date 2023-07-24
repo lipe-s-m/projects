@@ -2,6 +2,6 @@
 A porta abre e voce se encontra em uma especie de cripta escura. O aposento e muito grande. Ha
 um altar em uma das extremidades e varios caixoes encontram-se espalhados pelo chao. Ha uma
 porta atras de voce, na parede sul, e tambem outra na parede oeste. Se quiser investigar melhor o
-aposento, &254. Se o lugar o deixa perturbado, voce pode sair pela porta do oeste (va para
+aposento, Digite 254. Se o lugar o deixa perturbado, voce pode sair pela porta do oeste (va para
 380).$
 Digite 254 

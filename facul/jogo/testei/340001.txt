@@ -2,10 +2,10 @@
 Voce tenta varios itens do equipamento contra o poder do quadro, mas nenhum parece
 funcionar. Voce pode tentar qualquer um desses, se os tiver:
 
-   Cortar o quadro a golpes de espada                  &388
-   Segurar uma joia a sua frente                       & 31
-   Enterrar uma estaca de madeira no quadro.           & 241
-   Jogar um queijo no quadro                           & 45$
+   Cortar o quadro a golpes de espada                  Digite 388
+   Segurar uma joia a sua frente                       Digite  31
+   Enterrar uma estaca de madeira no quadro.           Digite  241
+   Jogar um queijo no quadro                           Digite  45$
 Digite 388 
 Digite 31 
 Digite 241 

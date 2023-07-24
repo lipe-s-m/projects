@@ -13,7 +13,7 @@ um grande DRAGAO se aproxima na sua direcao, vindo da escuridao. Da suas narinas
 de fumaca. Sua pele vermelha e coberta de escamas brilha sob uma substancia oleosa que a recobre.
 A fera tem uns 15 metros de comprimento! Como voce vai atacar este monstro?
 
-       Desembainha a sua espada e se prepara para atacar?                 &152.
-       Procura na sua memoria um outro meio de ataque?                    &126$
+       Desembainha a sua espada e se prepara para atacar?                 Digite 152.
+       Procura na sua memoria um outro meio de ataque?                    Digite 126$
 Digite 152 
 Digite 126 

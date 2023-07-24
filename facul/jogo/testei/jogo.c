@@ -13,7 +13,7 @@ typedef struct _ATRIBUTOS
 
 typedef struct _PERSONAGEM
 {
-    int vida;
+    int lugar;
     ATRIBUTOS atributo;
     char nome[40];
     int inimigo[10];
@@ -31,6 +31,7 @@ typedef struct _INIMIGO
 
 int jogar_dado(PERSONAGEM jogador1, INIMIGO *npc);
 PERSONAGEM dado_inicio(PERSONAGEM);
+int TESTE_SORTE(PERSONAGEM);
 void press();
 void limpar_tela();
 void imprimir_menu();
@@ -66,14 +67,9 @@ int main()
         switch (comando)
         {
         case 'I':
-            printf("%s, voce tem %d vidas, classe %s", jogador1.nome, jogador1.vida, jogador1.classe);
+            printf("%s, voce tem %d de energia, %d de habilidade, esta na posicao %s e sua classe eh %s", jogador1.nome, jogador1.atributo.energia, jogador1.atributo.habilidade, jogador1.posicao, jogador1.classe);
             press();
             break;
-        case 'O':
-            puts("Ta olhando oq doidao?");
-            press();
-            break;
-
         case 'D':
             printf("%s, Digite em MAIUSCULO as letras correspondentes as que estao no menu", jogador1.nome);
             press();
@@ -170,12 +166,30 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
         printf("\nDigite 'sair' para voltar ao menu de opções\n");
         fclose(entrada);
     }
+    if(jogador1.lugar == 2)
+    {
+        limpar_tela();
+        entrada = fopen(jogador1.posicao, "r");
+        if(entrada == NULL)
+        {
+            perror("Caminho Inválido");
+            return ler_pagina(page, jogador1);
+        }
+        while(!feof(entrada))
+        {
+            fscanf(entrada, "%c", &c);
+            if(c != '$')
+                printf("%c", c);        
+        }
+        printf("\nDigite 'sair' para voltar ao menu de opções\n");
+        jogador1.lugar = 1;
+        fclose(entrada);
+    }
     strcpy(jogador1.posicao, page);
     printf("\nPara onde voce deseja ir, %s?\n     >>> ", jogador1.nome);
     scanf("%s", page);
-    
     // jogador1 = compare(page, jogador1);
-    if(strcmp(page, "240") == 0)
+    if(strcmp(page, "240") == 0 || strcmp(page, "71") == 0)
         combate(page, jogador1);
     if(strcmp(page, "10") == 0 || strcmp(page, "11") == 0)
         final(page, jogador1);
@@ -187,6 +201,7 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
     char txt[8] = "001.txt";
     if(strcmp(page, "sair") == 0) 
     {
+        jogador1.lugar = 2;
         return jogador1;
     }
     strcat(page, txt);
@@ -304,6 +319,7 @@ PERSONAGEM morte(char *page, PERSONAGEM jogador1)
         press();
         FILE *gameover, *reset;
         gameover = fopen("gameover.txt", "r");
+        limpar_tela();
         while(!feof(gameover))
         {
             fscanf(gameover, "%c", &c);
@@ -328,7 +344,7 @@ PERSONAGEM compare(char *page, PERSONAGEM jogador1)
 PERSONAGEM combate(char *page, PERSONAGEM jogador1)
 {
     limpar_tela();
-    int dano;
+    int dano, sorte;
     FILE *entrada;
     char txt[8] = "001.txt", temp[10];
     strcat(page, txt);
@@ -357,7 +373,7 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
             if(dano == 1)
                 npc[1].energia -= 2;
             if(dano == 2)
-                jogador1.atributo.energia -=2;
+                jogador1.atributo.energia -= 2;
         }
         if(jogador1.atributo.energia <= 0)
         {
@@ -381,7 +397,50 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
         strcpy(page, "145");
         return jogador1;
     }
+
+    if(strcmp(page, "71001.txt") == 0)
+    {
+        while(!feof(entrada))
+        {
+            fscanf(entrada, "%c", &c);
+            if(c != '$')
+                printf("%c", c);        
+        }
+        printf("\n\n \nDigite qualquer tecla para Testar sua Sorte!!!");
+        scanf("%s", temp);
+        limpar_tela();
+        sorte = TESTE_SORTE(jogador1);
+        limpar_tela();
+
+        if(sorte == 2)
+        {
+            printf("voce pisa em terreno mole e faz um barulho, e os olhos do ser se abrem instantaneamente\nVoce tenta lutar contra o Orc, porem ele e muito forte e rapido.\nEle te bate com uma estaca de madeira, e te arremessa contra a parede...");
+            press();
+
+            morte(page, jogador1);
+        }
+        if(sorte == 1)
+        {
+        printf("Voce passa silenciosamente pelo monstro. O Orc nao acorda e continua a roncar alto");
+        press();
+        limpar_tela();
+        FILE *vitoria;
+        vitoria = fopen("ganhou.txt", "r");
+        while(!feof(vitoria))
+        {
+            fscanf(vitoria, "%c", &c);
+            if(c != '$')
+                printf("%c", c);        
+        }
+        press();
+        fclose(vitoria);
+        strcpy(page, "208");
+        return jogador1;
+        }
+    }
+
 }
+
 void press()
 {
     char temp[20];
@@ -407,27 +466,35 @@ int jogar_dado(PERSONAGEM jogador1, INIMIGO *npc)
 
     if(dado1 + jogador1.atributo.habilidade > dado2 + npc[1].habilidade)
     {
-        printf("%s tirou %d no dado \t %s tirou %d no dado\n", jogador1.nome, dado1, npc[1].nome, dado2);
-        printf("Voce deu dano!\n");
+        printf("%s tirou %d no dado \t %s tirou %d no dado\n", jogador1.nome, dado1 + jogador1.atributo.habilidade, npc[1].nome, dado2 + npc[1].habilidade);
+        printf("%s deu dano!\n", jogador1.nome);
         press();
         limpar_tela();
         return 1;
 
     }
-    else
+    if(dado1 + jogador1.atributo.habilidade < dado2 + npc[1].habilidade)
     {
-        printf("%s tirou %d no dado \t %s tirou %d no dado\n", jogador1.nome, dado1, npc[1].nome, dado2);
-        printf("Voce nao deu dano!\n");
+        printf("%s tirou %d no dado \t %s tirou %d no dado\n", jogador1.nome, dado1 + jogador1.atributo.habilidade, npc[1].nome, dado2 + npc[1].habilidade);
+        printf("%s deu dano!\n", npc[1].nome);
         press();
         limpar_tela();
         return 2;
+    }
+    else
+    {
+        printf("%s tirou %d no dado \t %s tirou %d no dado\n", jogador1.nome, dado1 + jogador1.atributo.habilidade, npc[1].nome, dado2 + npc[1].habilidade);
+        printf("Ninguem deu dano!\n");
+        press();
+        limpar_tela();
+        return 3;
     }
    
 }
 
 void imprimir_menu()
 {
-    printf("\n%10s %10s %10s %10s %10s %10s\n", "A - Atacar", "M - Movimentar", "O - Olhar", "I - Info", "Q = Sair", "D - Dica");
+    printf("\n%10s %10s %10s %10s\n", "M - Movimentar", "I - Info", "Q = Sair", "D - Dica");
     printf("\nEscolha uma opção:\n     >>> ");
 }
 
@@ -455,7 +522,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 printf("Insira seu nome: ");
                 scanf("%s", jogador2.nome);
                 system("cls");
-                jogador2.vida = 3;
+                jogador2.lugar = 0;
 
                 while (parada)
                 {
@@ -621,7 +688,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 {
                     fread(&jogador2, sizeof(PERSONAGEM), 1, fp_carregar);
                 }
-                printf("\nBem Vindo de volta %s, voce tem %d vidas! Sua classe é %s.", jogador2.nome, jogador2.vida, jogador2.classe);
+            printf("Bem vindo de volta %s! Voce tem %d de energia, %d de habilidade, esta na posicao %s e sua classe eh %s", jogador2.nome, jogador2.atributo.energia, jogador2.atributo.habilidade, jogador2.posicao, jogador2.classe);
                 fclose(fp_carregar);
                 menu = 0;
                 return jogador2;
@@ -696,4 +763,38 @@ PERSONAGEM dado_inicio(PERSONAGEM jogador)
     }   
         
     return jogador;
+}
+int TESTE_SORTE(PERSONAGEM jogador)
+{
+    int parada = 1, dados = 4, dado, soma = 0, i = 2, sor = jogador.atributo.sorte;
+    char temp[20];
+    limpar_tela();
+    printf("voce jogara 2 dados, caso a soma dois dos dados seja MENOR que seus pontos de sorte, voce teve sorte.\nCaso a soma dos 2 dados seja MAIOR OU IGUAL seus pontos de sorte, voce MORRE!");
+    while(i>0)
+    {  
+        dado = (rand() % 6) +1;
+        printf("\n\033[1mTESTE SUA SORTE %s!\033[0m\n", jogador.nome);
+        
+        printf("\nVoce tem %d dados. Digite qualquer tecla para joga-lo\n", i);
+        scanf("%s", temp);
+        limpar_tela();
+        if(i == 2)
+        {
+            soma+= dado;
+            printf("\nVocê tirou %d no primeiro dado, \nvoce pode tirar no maximo %d no segundo dado\n\n", dado, (jogador.atributo.sorte - dado) - 1);
+        }
+         if(i == 1)
+        {
+            soma+= dado;
+            printf("\nVocê tirou %d no segundo dado, \nA soma dos dados foi %d, voce tem %d de sorte.\n", dado, soma, jogador.atributo.sorte);
+        }
+        i--;
+    }
+    press();
+    limpar_tela();
+    if(soma < jogador.atributo.sorte)
+        return 1;
+    if(soma >= jogador.atributo.sorte)
+        return 2;
+
 }

@@ -29,5 +29,5 @@ Fogo, com medo de que caisse em maos erradas. A ultima pagina dizia assim:
 Voce profere estas palavras lenta e suavemente. Subitamente, as paginas
 parecem brilhar e, quando este brilho desaparece, tambem desaparecem as
 palavras nas paginas do livro. Voce repete o feitico para si mesmo, a fim de
-memorizar as palavras, e sai do aposento. &42.$
+memorizar as palavras, e sai do aposento. Digite 42.$
 Digite 42 

@@ -3,9 +3,9 @@ A batalha vai requerer todas as suas reservas de forca e raciocinio. Seu adversa
 agora na extremidade oposta do aposento, em frente a uma porta com duas fechaduras. Como voce
 se aproximara dele?
 
-Segurando a sua espada firmemente e avancando na sua direcao?             & 142
-Vai procurar em sua mochila uma outra arma para usar?                     & 105
-Vai procurar pelo aposento outros meios de ataque ou defesa?              & 389$
+Segurando a sua espada firmemente e avancando na sua direcao?             Digite  142
+Vai procurar em sua mochila uma outra arma para usar?                     Digite  105
+Vai procurar pelo aposento outros meios de ataque ou defesa?              Digite  389$
 Digite 142 
 Digite 105 
 Digite 389 

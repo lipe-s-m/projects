@@ -7,10 +7,10 @@ atracada na margem com uma longa vara a seu lado: voce poderia atravessar o rio
 impulsionando a jangada com a vara. Uma velha ponte fragil atravessa o rio a
 direita. Se voce nao confia em nenhuma dessas alternativas, pode tambem nadar.
 Qual destas opcoes voce escolhe?
-                 Tocar o sino                       &3
-                 Atravessar de jangada              &386
-                 Arriscar a ponte                   &209
-                 Nadar                              &316$
+                 Tocar o sino                       Digite 3
+                 Atravessar de jangada              Digite 386
+                 Arriscar a ponte                   Digite 209
+                 Nadar                              Digite 316$
 Digite 3 
 Digite 386 
 Digite 209 

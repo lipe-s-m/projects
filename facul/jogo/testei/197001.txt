@@ -2,7 +2,7 @@
 No topo da escadaria, a passagem faz uma curva fechada para o leste. Quando voce para para
 recuperar as forcas, ouve um rangido na rocha atras de voce. Voce se vira a tempo de ver uma
 pesada porta levadica tombar para trancar a passagem atras de voce. Voce so pode seguir adiante
-agora! Voce pode continuar em frente (&48) ou verificar se ha passagens secretas nas
-paredes (&295).$
+agora! Voce pode continuar em frente (Digite 48) ou verificar se ha passagens secretas nas
+paredes (Digite 295).$
 Digite 48 
 Digite 295 

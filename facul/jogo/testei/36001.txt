@@ -3,7 +3,7 @@ A porta trancada abre-se violentamente e um mau cheiro insuportavel chega as sua
 do aposento, o chao esta coberto de ossos, vegetacao apodrecida e lodo. Um velho de cabelos
 desgrenhados, vestido de trapos, salta sobre voce gritando. Tem uma barba longa e grisalha e
 sacode um velho pe de cadeira de madeira. Ele simplesmente esta louco, como parece, ou isto e
-algum tipo de armadilha? Se voce preferir ataca-lo, &348. Se preferir tentar falar com ele,
-&200.$
+algum tipo de armadilha? Se voce preferir ataca-lo, Digite 348. Se preferir tentar falar com ele,
+Digite 200.$
 Digite 348 
 Digite 200 

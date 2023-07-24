@@ -2,9 +2,9 @@
 Voce parte para o sul por uma passagem calcada com pedras redondas. Ela vira
 para o oeste, depois para o sul, depois para o oeste de novo ate que voce se ve em
 um encontro de tres caminhos.
-         Para seguir para o norte            &329
-         Para seguir para o oeste            &180
-         Para seguir de volta para o leste   &70$
+         Para seguir para o norte            Digite 329
+         Para seguir para o oeste            Digite 180
+         Para seguir de volta para o leste   Digite 70$
 Digite 329 
 Digite 180 
 Digite 70 

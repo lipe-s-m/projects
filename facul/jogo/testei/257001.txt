@@ -7,7 +7,7 @@ menor em tamanho. O Goblin choraminga enquanto o
 Orc o acerta continuamente com o chicote. 
 Atras desse enorme Orc tem uma brilhante espada, voce 
 se sente tentado em pegar a espada, mesmo sabendo do perigo
-que voce ira correr (&357). Caso queira voltar, va para &113.
+que voce ira correr (Digite 357). Caso queira voltar, va para Digite 113.
 
 Digite 357
 Digite 113$

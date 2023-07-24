@@ -8,8 +8,8 @@ apartamento. Parece o estrondo de trovoes que se preparam para se transformar em
 uma tempestade. Voce se aproxima da arca e pode ver que tres fechaduras a mantem
 fechada. Conforme voce se aproxima, o ruido fica mais alto ainda. Voce:
          Da um golpe de espada na caixa
-           para tentar corta-la em duas?                   &379
+           para tentar corta-la em duas?                   Digite 379
          Procura em sua mochila para ver se
-           encontra chaves que possam servir?              &139$
+           encontra chaves que possam servir?              Digite 139$
 Digite 379 
 Digite 139 

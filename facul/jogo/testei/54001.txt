@@ -1,5 +1,5 @@
 
 Voce esta junto a uma porta na extremidade norte de uma passagem que vai do norte para o sul.
-Para ir para o sul, &308. Para passar pela porta, &179.$
+Para ir para o sul, Digite 308. Para passar pela porta, Digite 179.$
 Digite 308 
 Digite 179 

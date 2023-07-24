@@ -5,7 +5,7 @@ forca. Na parede a sua direita ha duas alavancas, e parece provavel que estas al
 alguma coisa a ver com o movimento do portao levadico. Voce quer puxar a alavanca da direita ou
 a da esquerda?
 
-   Direita       & 128
-   Esquerda      & 243$
+   Direita       Digite  128
+   Esquerda      Digite  243$
 Digite 128 
 Digite 243 

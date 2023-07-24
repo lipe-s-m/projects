@@ -1,8 +1,8 @@
 
 Voce caminha na direcao oeste por algum tempo, depois a passagem vira para o norte. Um pouco
-mais adiante, voce chega a uma encruzilhada. Voce pode seguir para o sul (& 114) ou para
-o oeste (& 297). Para o norte, a passagem termina em pouco tempo em um beco sem saida.
-Se voce quiser seguir por aqui, &398.$
+mais adiante, voce chega a uma encruzilhada. Voce pode seguir para o sul (Digite  114) ou para
+o oeste (Digite  297). Para o norte, a passagem termina em pouco tempo em um beco sem saida.
+Se voce quiser seguir por aqui, Digite 398.$
 Digite 114 
 Digite 297 
 Digite 398 

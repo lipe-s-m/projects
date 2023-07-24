@@ -1,5 +1,5 @@
 
 Sao e salvo por enquanto, voce investiga a caverna e encontra uma passagem que continua para o
-oeste. & 274. Voce pode descansar e comer umas Provisoes antes de continuar. Acrescente
+oeste. Digite  274. Voce pode descansar e comer umas Provisoes antes de continuar. Acrescente
 3 pontos de SORTE por ter derrotado o Dragao.$
 Digite 274 
