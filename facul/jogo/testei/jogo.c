@@ -329,7 +329,7 @@ PERSONAGEM morte(char *page, PERSONAGEM jogador1)
         press();
         limpar_tela();
         remove("gravar.dat");
-        return carregar_jogo(&opcao, jogador1);
+        exit(1);
     
 
 }
@@ -456,7 +456,7 @@ void limpar_tela()
 int jogar_dado(PERSONAGEM jogador1, INIMIGO *npc)
 {
     printf("------------------------------");
-    printf("\n%s        \t|\t%d\n", jogador1.nome, jogador1.atributo.energia);
+    printf("\n%s\t|\t%d\n", jogador1.nome, jogador1.atributo.energia);
     printf("\n%s\t|\t%d\n", npc[1].nome, npc[1].energia);
     printf("------------------------------\n \n \n");
 
