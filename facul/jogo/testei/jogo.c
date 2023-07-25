@@ -537,7 +537,7 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
     npc[3].energia = 7;
     npc[3].habilidade = 9;
     strcpy(npc[4].nome, "Ciclope");
-    npc[4].energia = 25;
+    npc[4].energia = 15;
     npc[4].habilidade = 12;
     if(strcmp(page, "103001.txt") == 0)
     {
