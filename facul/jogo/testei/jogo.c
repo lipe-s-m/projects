@@ -538,7 +538,7 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
     npc[3].habilidade = 9;
     strcpy(npc[4].nome, "Ciclope");
     npc[4].energia = 15;
-    npc[4].habilidade = 12;
+    npc[4].habilidade = 11;
     if(strcmp(page, "103001.txt") == 0)
     {
         while(!feof(entrada))
@@ -870,7 +870,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                     switch (classe)
                     {
                     case '1':
-                        printf("\n    A classe Guerreiro possui as seguintes vantagens iniciais:\n -> {dado} + 4 de habilidade, {2*dado} + 8 de energia e {dado} + 6 de sorte <-\n\n");
+                        printf("\n    A classe Guerreiro possui as seguintes vantagens iniciais:\n -> {dado} + 5 de habilidade, {2*dado} + 10 de energia e {dado} + 6 de sorte <-\n\n");
                         printf("Ideal para jogadores iniciantes, pois eh uma classe bem resistente. Se for sua primeira experiencia, recomendamos que comece por ela.\n \n \n");
                         printf("Deseja selecionar a classe Guerreiro?");
                         printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
@@ -890,7 +890,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                             {
                             limpar_tela();
                             printf("%s, Voce escolheu a classe: %s\n", jogador2.nome, jogador2.classe);
-                            jogador2.atributo.habilidade = 4, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 6;
+                            jogador2.atributo.habilidade = 6, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 6;
                             jogador2 = dado_inicio(jogador2);
                             parada = 0;
                             }
@@ -910,7 +910,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                         break;    
                     case '2':
                     
-                        printf("\n    A classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 6 de habilidade, {2*dado} + 5 de energia e {dado} + 6 de sorte <-\n\n");
+                        printf("\n    A classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 7 de habilidade, {2*dado} + 5 de energia e {dado} + 6 de sorte <-\n\n");
                         printf("Ideal para jogadores mais corajosos, possui menos resistencia, porem, tem maior chance de conseguir realizar com sucesso suas escolhas.\n \n \n");
                         printf("Deseja selecionar a classe Assassino?");
                         printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
