@@ -7,6 +7,6 @@ salto e desembainha a espada. O CICLOPE DE FERRO move a cabeca na sua direcao e 
 seu pedestal. Voce tera que lutar!
 
 ||==================================================||
-||  CICLOPE        HABILIDADE 12        ENERGIA 15  ||
+||  CICLOPE        HABILIDADE 11        ENERGIA 15  ||
 ||==================================================||
 $
