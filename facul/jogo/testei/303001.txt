@@ -7,5 +7,4 @@ a da esquerda?
 
    Direita       Digite  128
    Esquerda      Digite  243$
-Digite 128 
-Digite 243 
+$

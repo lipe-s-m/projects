@@ -1,8 +1,7 @@
 
 Os dois ORCS bebados agora estao evidentemente espantados com a
-sua entrada e, tao rapido quanto sao capazes, saem em busca de armas. A bebedeira deles permite que voce acrescente 1 de dano a mais neles.
+sua entrada e, tao rapido quanto sao capazes, saem em busca de armas. O chao da sala esta inundado de cerveja...
 
-HABILIDADE +1
 
 ||==================================================||
 ||ORCS BEBADOS      HABILIDADE 7         ENERGIA 8  ||

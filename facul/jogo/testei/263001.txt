@@ -5,14 +5,12 @@ Enquanto se recompoem gradualmente, ele lhe agradece muitas vezes. Voce
 conversa com ele na esperanca de descobrir alguns dos segredos da montanha, e
 ele comeca a contar a historia dele.
 Ha muitos anos atras, ele era um aventureiro como voce em busca do tesouro do
-Feiticeiro. Foi capturado pelos Orcas e jogado em uma cela solitaria como uma
+Feiticeiro. Foi capturado pelo Orc Grishak e jogado em uma cela solitaria como uma
 especie de bicho de estimacao para os seres. Voce lhe pergunta se ele gostaria de
 acompanha-lo na aventura, mas ele simplesmente quer sair e ver o mundo la fora
-de novo. Voce pede conselhos, mas ele diz que sabe muito pouco. Ele o aconselha a
-tratar o barqueiro com todo o respeito. Ele lhe diz que a alavanca da direita e a que
+de novo. Voce pede conselhos, mas ele diz que sabe muito pouco. Ele lhe diz que a alavanca da direita e a que
 voce deve puxar na parede em frente para abrir o portao de ferro no final da
-passagem. Ele tambem descobriu que as chaves da Casa Flutuante sao guardadas
-por um homem e seu cachorro.
+passagem.
 Voces apertam as maos um do outro, saem do aposento e vao cada um para o seu
-caminho. Acrescente 1 ponto de SORTE. Digite 314.$
-Digite 314 
+caminho.$
+Digite 314 Para continuar sua aventura.$

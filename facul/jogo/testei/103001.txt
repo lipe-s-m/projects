@@ -3,7 +3,7 @@ Os goblins parecem estar felizes em te ver, eles acham que voce sera
 mais um brinquedo pra eles.
 
 ||==================================================||
-|| Goblins Insanos     HABILIDADE 10     ENERGIA 6  ||
+|| Goblins Insanos     HABILIDADE 9     ENERGIA 7   ||
 ||==================================================||
 
 $

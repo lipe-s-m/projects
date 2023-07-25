@@ -8,7 +8,7 @@
 
 typedef struct _ATRIBUTOS
 {
-    int habilidade, energia, sorte;
+    int habilidade, energia, sorte, hab, ener, sor;
 } ATRIBUTOS;
 
 typedef struct _PERSONAGEM
@@ -31,17 +31,20 @@ typedef struct _INIMIGO
 }INIMIGO;
 
 int jogar_dado(int i, PERSONAGEM jogador1, INIMIGO *npc);
-PERSONAGEM dado_inicio(PERSONAGEM);
 int TESTE_SORTE(PERSONAGEM);
 void press();
 void limpar_tela();
 void imprimir_menu();
-PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1);
 void salvar_jogo(PERSONAGEM jogador1);
+PERSONAGEM especial(char *page, PERSONAGEM jogador1);
+PERSONAGEM dado_inicio(PERSONAGEM);
+PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1);
 PERSONAGEM compare(char *page, PERSONAGEM jogador1);
 PERSONAGEM combate(char *page, PERSONAGEM jogador1);
 PERSONAGEM final(char *page, PERSONAGEM jogador1);
 PERSONAGEM morte(char *page, PERSONAGEM jogador1);
+PERSONAGEM finalbom(char *page, PERSONAGEM jogador1);
+
 
 
 PERSONAGEM carregar_jogo(int *valor, PERSONAGEM);
@@ -56,16 +59,16 @@ int main()
     int vazio = 0;
     char comando, c;
     char palavra[30], temp[23], lugar[20];
-    // FILE *logo;
-    // logo = fopen("livro.txt", "r");
-    // while(!feof(logo))
-    // {
-    //     fscanf(logo, "%c", &c);
-    //     printf("%c", c);
-    // }
-    // fclose(logo);
-    // printf("\n \n \n\nDigite qualquer tecla para Iniciar o Jogo!\n \n");
-    // scanf("%s", temp);
+     FILE *logo;
+     logo = fopen("livro.txt", "r");
+     while(!feof(logo))
+     {
+         fscanf(logo, "%c", &c);
+         printf("%c", c);
+     }
+     fclose(logo);
+     printf("\n \n \n\nDigite qualquer tecla para Iniciar o Jogo!\n \n");
+     scanf("%s", temp);
     limpar_tela();
     jogador1 = carregar_jogo(&opcao, jogador1);
     press();
@@ -100,8 +103,6 @@ int main()
                 if (salvar == 0)
                 {
                     opcao = 0;
-                    
-
                 }
                 sair = 0;
                 break;
@@ -118,7 +119,7 @@ int main()
                 sair = 0;
                 break;
             default:
-                puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
                 scanf("%s", temp);
                 sair = 1;
                 limpar_tela();
@@ -127,7 +128,7 @@ int main()
             }
             break;
         default:
-            puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+            puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
             scanf("%s", temp);
             
             limpar_tela();
@@ -137,10 +138,11 @@ int main()
 
 
     printf("\n%s fechou o jogo", jogador1.nome);
-    // scanf("%d", &jogador1.atributo.energia);
-    // printf("\nvoce tem %d de energia", jogador1.atributo.energia);
+    scanf("%d", &jogador1.atributo.energia);
+    printf("\nvoce tem %d de energia", jogador1.atributo.energia);
     return 0;
 }
+
 void salvar_jogo(PERSONAGEM jogador1)
 {
     FILE *gravar;
@@ -154,6 +156,7 @@ void salvar_jogo(PERSONAGEM jogador1)
     printf("%s salvou seu jogo", jogador1.nome);
     fclose(gravar);
 }
+
 PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
 {
     FILE *entrada, *ir;
@@ -165,7 +168,7 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
         entrada = fopen("1001.txt", "r");
         if(entrada == NULL)
         {
-            perror("Caminho Inválido");
+            perror("Caminho Invalido");
             return ler_pagina(page, jogador1);
         }
         while(!feof(entrada))
@@ -174,7 +177,7 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
             if(c != '$')
                 printf("%c", c);        
         }
-        printf("\nDigite 'sair' para voltar ao menu de opções\n");
+        printf("\nDigite 'sair' para voltar ao menu\n");
         fclose(entrada);
     }
     if(jogador1.lugar == 2)
@@ -183,7 +186,7 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
         entrada = fopen(jogador1.posicao, "r");
         if(entrada == NULL)
         {
-            perror("Caminho Inválido");
+            perror("Caminho Invalido");
             return ler_pagina(page, jogador1);
         }
         while(!feof(entrada))
@@ -192,7 +195,7 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
             if(c != '$')
                 printf("%c", c);        
         }
-        printf("\nDigite 'sair' para voltar ao menu de opções\n");
+        printf("\nDigite 'sair' para voltar ao menu\n");
         jogador1.lugar = 1;
         fclose(entrada);
     }
@@ -200,12 +203,29 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
     printf("\nPara onde voce deseja ir, %s?\n     >>> ", jogador1.nome);
     scanf("%s", page);
     // jogador1 = compare(page, jogador1);
-    if(strcmp(page, "240") == 0 || strcmp(page, "71") == 0 || strcmp(page, "116") == 0 || strcmp(page, "103") == 0 || strcmp(page, "338") == 0)
+    if(strcmp(page, "116") == 0)
+        jogador1.itens[2] = 1;
+    if(strcmp(page, "378") == 0)
+        jogador1.atributo.energia--;
+    if(strcmp(page, "145") == 0)
+        jogador1.atributo.habilidade++;
+    if(strcmp(page, "201") == 0)
+        jogador1.atributo.habilidade++;
+    if(strcmp(page, "15") == 0)
+        jogador1.atributo.energia = jogador1.atributo.ener;
+    if(strcmp(page, "103") == 0)
+        jogador1.itens[5] = 1;
+
+    if(strcmp(page, "240") == 0 || strcmp(page, "71") == 0 || strcmp(page, "116") == 0 || strcmp(page, "103") == 0 || strcmp(page, "338") == 0 )
         combate(page, jogador1);
-    if(strcmp(page, "10") == 0 || strcmp(page, "11") == 0)
+    if(strcmp(page, "5") == 0)
+        finalbom(page, jogador1);
+    if(strcmp(page, "10") == 0 || strcmp(page, "11") == 0 || strcmp(page, "5") == 0)
         final(page, jogador1);
-    if(strcmp(page, "278") == 0)
+    if(strcmp(page, "278") == 0 || strcmp(page, "357") == 0 || strcmp(page, "243") == 0)
         morte(page, jogador1);
+    if(strcmp(page, "159") == 0 || strcmp(page, "213") == 0)
+        especial(page, jogador1);
 
     limpar_tela();
     char arquivo[20];
@@ -220,7 +240,7 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
     // ir = fopen()
     if(entrada == NULL)
     {
-        printf("Caminho Inválido");
+        printf("Caminho Invalido");
         return ler_pagina(page, jogador1);
     }
     while(!feof(entrada))
@@ -229,24 +249,60 @@ PERSONAGEM ler_pagina(char *page, PERSONAGEM jogador1)
             if(c != '$')
                 printf("%c", c);        
     }
-    printf("\nDigite 'sair' para voltar ao menu de opções\n");
+    printf("\nDigite 'sair' para voltar ao menu\n");
     fclose(entrada);
                 
     return ler_pagina(page, jogador1);
 }
+PERSONAGEM finalbom(char *page, PERSONAGEM jogador1)
+{
+    FILE *entrada;
+    char txt[8] = ".txt", c;
+    if(jogador1.itens[5] == 1)
+            {
+                limpar_tela();
+                printf("A porta so abre pelo outro lado. Voce ve um buraco que da passagem pro outro lado porem ele eh muito pequeno.\nPorem, de repente o anao que voce salvou aparece no local, ele prontamente se oferece para te ajudar. \nEle passa pelo outro lado e abre a porta para voce. Voce agradece e atravessa a porta");
+                press();
+                limpar_tela();
+              
+                strcat(page, txt);
+                entrada = fopen("5001.txt", "r");
+                if(entrada == NULL)
+                {
+                    printf("Caminho Invalido");
+                    return final(page, jogador1);
+                }
+                while(!feof(entrada))
+                {
+                        fscanf(entrada, "%c", &c);
+                        if(c != '$')
+                            printf("%c", c);        
+                }
+            fclose(entrada);
+            printf("\n");
+            press();
+            limpar_tela();
+            printf("Voce completou nosso jogo! Muito obrigado por jogar! S2");
+            press();
+            limpar_tela();
+            remove("gravar.dat");
+            exit(1);
+        }
+}
+
 PERSONAGEM final(char *page, PERSONAGEM jogador1)
 {
     FILE *entrada;
     char txt[9] = "001.txt", c;
     int opcao = 0;
     limpar_tela();
-    if(strcmp(page, "10") == 0 || strcmp(page, "11") == 0)
+    if(strcmp(page, "10") == 0)
     {
         strcat(page, txt);
         entrada = fopen(page, "r");
         if(entrada == NULL)
         {
-            printf("Caminho Inválido");
+            printf("Caminho Invalido");
             return final(page, jogador1);
         }
         while(!feof(entrada))
@@ -256,34 +312,50 @@ PERSONAGEM final(char *page, PERSONAGEM jogador1)
                     printf("%c", c);        
         }
         printf("\n");
-        printf("\nPara onde voce deseja ir, %s?\n     >>> ", jogador1.nome);
-        scanf("%s", page);
+        press();
+        limpar_tela();
         fclose(entrada);
-        return final(page, jogador1);
-    }
-        if(strcmp(page, "12") == 0)
+        entrada = fopen("11001.txt", "r");
+        if(entrada == NULL)
         {
-            strcat(page, txt);
-            entrada = fopen(page, "r");
-            if(entrada == NULL)
-            {
-                printf("Caminho Inválido");
-                return final(page, jogador1);
-            }
-            while(!feof(entrada))
-            {
-                    fscanf(entrada, "%c", &c);
-                    if(c != '$')
-                        printf("%c", c);        
-            }
-            printf("\n%s, Voce acaba de se tornar mais um desses ossos, ao ser jogado, voce sente seus ossos quebrarem,\nseu destino agora, eh viver o resto de sua vida miseravel ao lado desses ossos secos...", jogador1.nome);
-            press();
-            fclose(entrada);
-            return morte(page, jogador1);
+            printf("Caminho Invalido");
+            return final(page, jogador1);
         }
-    else
-    {
-        return ler_pagina(page, jogador1);
+        while(!feof(entrada))
+        {
+                fscanf(entrada, "%c", &c);
+                if(c != '$')
+                    printf("%c", c);        
+        }
+        printf("\n");
+        press();
+        limpar_tela();
+        fclose(entrada);
+        entrada = fopen("12001.txt", "r");
+        if(entrada == NULL)
+        {
+            printf("Caminho Invalido");
+            return final(page, jogador1);
+        }
+        while(!feof(entrada))
+        {
+                fscanf(entrada, "%c", &c);
+                if(c != '$')
+                    printf("%c", c);        
+        }
+        printf("\n");
+        printf("\n%s, Voce acaba de se tornar mais um desses ossos, ao ser jogado, voce sente seus ossos quebrarem,\nseu destino agora, eh viver o resto de sua vida miseravel ao lado desses ossos secos...", jogador1.nome);
+        press();
+        limpar_tela();
+        fclose(entrada);
+        return morte(page, jogador1);
+        }
+    if(strcmp(page, "5") == 0)
+        {
+            printf("A porta so abre pelo outro lado. Voce ve um buraco que da passagem pro outro lado porem ele eh muito pequeno.\nSua unica opcao e ir para a porta ao sul.\n\nDigite 10 para ir pro sul. \n ");
+            scanf("%s", page);
+            limpar_tela();
+            return final(page, jogador1);
         }
 }
 PERSONAGEM morte(char *page, PERSONAGEM jogador1)
@@ -304,7 +376,45 @@ PERSONAGEM morte(char *page, PERSONAGEM jogador1)
         entrada = fopen(page, "r");
         if(entrada == NULL)
         {
-            printf("Caminho Inválido");
+            printf("Caminho Invalido");
+            return final(page, jogador1);
+        }
+        while(!feof(entrada))
+        {
+                fscanf(entrada, "%c", &c);
+                if(c != '$')
+                    printf("%c", c);        
+        }
+
+        press();
+        limpar_tela();
+    }
+    if(strcmp(page, "243") == 0)
+    {
+        strcat(page, txt);
+        entrada = fopen(page, "r");
+        if(entrada == NULL)
+        {
+            printf("Caminho Invalido");
+            return final(page, jogador1);
+        }
+        while(!feof(entrada))
+        {
+                fscanf(entrada, "%c", &c);
+                if(c != '$')
+                    printf("%c", c);        
+        }
+
+        press();
+        limpar_tela();
+    }
+    if(strcmp(page, "357") == 0)
+    {
+        strcat(page, txt);
+        entrada = fopen(page, "r");
+        if(entrada == NULL)
+        {
+            printf("Caminho Invalido");
             return final(page, jogador1);
         }
         while(!feof(entrada))
@@ -340,17 +450,70 @@ PERSONAGEM morte(char *page, PERSONAGEM jogador1)
         press();
         limpar_tela();
         remove("gravar.dat");
+        FILE *lapide;
+        lapide = fopen("lapide.txt", "a");
+        fprintf(lapide, "\nAqui jaz %s... lutou honrosamente por sua classe: %s!", jogador1.nome, jogador1.classe);
+        fclose(lapide);
         exit(1);
     
 
 }
 
-PERSONAGEM compare(char *page, PERSONAGEM jogador1)
+PERSONAGEM especial(char *page, PERSONAGEM jogador1)
 {
-    if(strcmp(page, "242") == 0 || strcmp(page, "371") || strcmp(page, "221") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, "") || strcmp(page, ""))
+    limpar_tela();
+    int dano, sorte, i;
+    FILE *lapide, *entrada;
+    char txt[8] = "001.txt", temp[10];
+    strcat(page, txt);
+    entrada = fopen(page, "r");
+    char c;
+    INIMIGO npc[5];
+    if(strcmp(page, "159001.txt") == 0)
     {
-
+        lapide = fopen("lapide.txt", "r");
+        while(!feof(lapide))
+        {
+            fscanf(lapide, "%c", &c);
+            if(c != '$')
+                printf("%c", c); 
+        }
+        printf("\n \n\nVoce espera nao se tornar um desses ossos um dia... \nDigite 285 para voltar a sua jornada \n ");
+        scanf("%s", page);
+        fclose(lapide);
+        return jogador1;
     }
+    if(strcmp(page, "213001.txt") == 0)
+    {
+        while(!feof(entrada))
+        {
+            fscanf(entrada, "%c", &c);
+            if(c != '$')
+                printf("%c", c);        
+        }
+        printf("\n\n \nDigite qualquer tecla para Testar sua Sorte!!!");
+        scanf("%s", temp);
+        limpar_tela();
+        sorte = TESTE_SORTE(jogador1);
+        limpar_tela();
+
+        if(sorte == 2)
+        {
+            printf("Ao tentar abrir a porta pela vigesima vez, voce acaba tropecando e batendo de cabeca na porta. \nlembre-se de usar o capacete da proxima vez %s", jogador1.nome);
+            press();
+
+            morte(page, jogador1);
+        }
+        if(sorte == 1)
+        {
+        printf("Voce pega impulso e consegue arrombar a porta com facilidade.");
+        press();
+        limpar_tela();
+        strcpy(page, "36");
+        return jogador1;
+        }
+    }
+
 }
 PERSONAGEM combate(char *page, PERSONAGEM jogador1)
 {
@@ -372,7 +535,7 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
     npc[2].habilidade = 7;
     strcpy(npc[3].nome, "Goblins Insanos");
     npc[3].energia = 7;
-    npc[3].habilidade = 10;
+    npc[3].habilidade = 9;
     strcpy(npc[4].nome, "Ciclope");
     npc[4].energia = 25;
     npc[4].habilidade = 12;
@@ -396,10 +559,11 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
             if(dano == 2)
                 jogador1.atributo.energia -= 2;
         }
+        limpar_tela();
         if(jogador1.atributo.energia <= 0)
         {
             limpar_tela();
-            printf("Os Goblins te fazem de pinhata");
+            printf("Os Goblins te penduram de cabeca pra baixo. Eles festejam enquanto lhe fazem de pinhata");
             press();
             morte(page, jogador1);
         }
@@ -422,8 +586,18 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
         }
         else
         {
+            limpar_tela();
             strcpy(page, "105");
+            FILE *derrota;
+            derrota = fopen("105001.txt", "r");
+            while(!feof(derrota))
+            {
+                fscanf(derrota, "%c", &c);
+                printf("%c", c);
+            }
+            fclose(derrota);
             press();
+            limpar_tela();
             morte(page, jogador1);
         }
     }
@@ -468,7 +642,6 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
             }
             press();
             fclose(vitoria);
-            jogador1.itens[2] = 1;
             strcpy(page, "378");
             return jogador1;
         }
@@ -539,7 +712,7 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
         if(jogador1.atributo.energia <= 0)
         {
             limpar_tela();
-            printf("O Ciclope PULA em cima de voce, te JOGA na parede, LEVANTA voce e QUEBRA sua coluna, tu foi de F parça");
+            printf("O Ciclope te derruba, levanta voce e QUEBRA sua coluna! Sua aventura acaba de forma brutal.. ");
             press();
             morte(page, jogador1);
         }
@@ -574,7 +747,7 @@ PERSONAGEM combate(char *page, PERSONAGEM jogador1)
 
         if(sorte == 2)
         {
-            printf("voce pisa em terreno mole e faz um barulho, e os olhos do ser se abrem instantaneamente\nVoce tenta lutar contra o Orc, porem ele e muito forte e rapido.\nEle te bate com uma estaca de madeira, e te arremessa contra a parede...");
+            printf("Voce pisa em terreno mole e faz um barulho, e os olhos do ser se abrem instantaneamente\nVoce tenta lutar contra o Orc, porem ele e muito forte e rapido.\nEle te bate com uma estaca de madeira, e te arremessa contra a parede...");
             press();
 
             morte(page, jogador1);
@@ -657,7 +830,7 @@ int jogar_dado(int i, PERSONAGEM jogador1, INIMIGO *npc)
 void imprimir_menu()
 {
     printf("\n%10s %10s %10s %10s\n", "M - Movimentar", "I - Info", "Q = Sair", "D - Dica");
-    printf("\nEscolha uma opção:\n     >>> ");
+    printf("\nEscolha um comando:\n     >>> ");
 }
 
 PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
@@ -697,7 +870,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                     switch (classe)
                     {
                     case '1':
-                        printf("\n    A classe Guerreiro possui as seguintes vantagens iniciais:\n -> {dado} + 6 de habilidade, {2*dado} + 12 de energia e {dado} + 6 de sorte <-\n\n");
+                        printf("\n    A classe Guerreiro possui as seguintes vantagens iniciais:\n -> {dado} + 4 de habilidade, {2*dado} + 8 de energia e {dado} + 6 de sorte <-\n\n");
                         printf("Ideal para jogadores iniciantes, pois eh uma classe bem resistente. Se for sua primeira experiencia, recomendamos que comece por ela.\n \n \n");
                         printf("Deseja selecionar a classe Guerreiro?");
                         printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
@@ -708,7 +881,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                         {
                         case 1:
                             
-                            printf("Você quer ser um {guerreiro} ou uma {guerreira}?\n    >>> ");
+                            printf("Voce quer ser um {guerreiro} ou uma {guerreira}?\n    >>> ");
                             fflush(stdin);
                             gets(jogador2.classe);
                             limpar_tela();
@@ -716,28 +889,28 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                             if(strcmp(jogador2.classe, "guerreiro") == 0 || strcmp(jogador2.classe, "guerreira") == 0)
                             {
                             limpar_tela();
-                            printf("%s, Você escolheu a classe: %s\n", jogador2.nome, jogador2.classe);
-                            jogador2.atributo.habilidade = 6, jogador2.atributo.energia = 12, jogador2.atributo.sorte = 6;
+                            printf("%s, Voce escolheu a classe: %s\n", jogador2.nome, jogador2.classe);
+                            jogador2.atributo.habilidade = 4, jogador2.atributo.energia = 8, jogador2.atributo.sorte = 6;
                             jogador2 = dado_inicio(jogador2);
                             parada = 0;
                             }
                             else
                             {
-                                puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                                puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
                                 scanf("%s", temp);
                             }
                             break;
                         case 2:
                             break;
                         default:
-                            puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                            puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
                             scanf("%s", temp);
                             break;
                         }
                         break;    
                     case '2':
                     
-                        printf("\n    A classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 9 de habilidade, {2*dado} + 5 de energia e {dado} + 6 de sorte <-\n\n");
+                        printf("\n    A classe Assassino possui as seguintes vantagens iniciais:\n -> {dado} + 6 de habilidade, {2*dado} + 5 de energia e {dado} + 6 de sorte <-\n\n");
                         printf("Ideal para jogadores mais corajosos, possui menos resistencia, porem, tem maior chance de conseguir realizar com sucesso suas escolhas.\n \n \n");
                         printf("Deseja selecionar a classe Assassino?");
                         printf("\n%s / %15s\n", "{1} - Sim", "{2} - Voltar\n");
@@ -747,33 +920,33 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                         {
                         case 1:
                             
-                            printf("Você quer ser um {assassino} ou uma {assassina}?\n    >>> ");
+                            printf("Voce quer ser um {assassino} ou uma {assassina}?\n    >>> ");
                             fflush(stdin);
                             gets(jogador2.classe);
                         
                             if(strcmp(jogador2.classe, "assassino") == 0 || strcmp(jogador2.classe, "assassina") == 0)
                             {
                             limpar_tela();
-                            printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
-                            jogador2.atributo.habilidade = 9, jogador2.atributo.energia = 5, jogador2.atributo.sorte = 6;
+                            printf("%s, Voce escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                            jogador2.atributo.habilidade = 6, jogador2.atributo.energia = 5, jogador2.atributo.sorte = 6;
                             jogador2 = dado_inicio(jogador2);
                             parada = 0;
                             }
                             else
                             {
-                                puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                                puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
                                 scanf("%s", temp);
                             }
                             break;
                         case 2:
                             break;
                         default:
-                            printf("***Comando Inválido, tente novamente...***");
+                            printf("**Comando Invalido, tente novamente...**");
                             break;
                         }
                         break;    
                     case '3':
-                        printf("\n    A classe Desbravador possui as seguintes vantagens iniciais:\n -> {dado} + 4 de habilidade, {2*dado} + 4 de energia e {dado} + 10 de sorte <-\n\n");
+                        printf("\n    A classe Desbravador possui as seguintes vantagens iniciais:\n -> {dado} + 4 de habilidade, {dado} + 4 de energia e {dado} + 4 de sorte <-\n\n");
                         printf("Escolha essa classe apenas se ja tiver experiencia com o jogo. Essa classe seria como o modo Hardcore, apenas os melhores tem sucesso com ela.\n \n \n");
 
                         printf("Deseja selecionar a classe Desbravador?");
@@ -782,35 +955,35 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                         switch (confirma)
                         {
                         case 1:
-                            
-                            printf("Você quer ser um {desbravador} ou uma {desbravadora}?\n    >>> ");
+                            limpar_tela();
+                            printf("Voce quer ser um {desbravador} ou uma {desbravadora}?\n    >>> ");
                             fflush(stdin);
                             gets(jogador2.classe);
                         
                             if(strcmp(jogador2.classe, "desbravador") == 0 || strcmp(jogador2.classe, "desbravadora") == 0)
                             {
-                            jogador2.atributo.habilidade = 4, jogador2.atributo.energia = 4, jogador2.atributo.sorte = 10;
+                            jogador2.atributo.habilidade = 4, jogador2.atributo.energia = 4, jogador2.atributo.sorte = 4;
                             limpar_tela();
-                            printf("%s, Você escolheu a classe: %s", jogador2.nome, jogador2.classe);
+                            printf("%s, Voce escolheu a classe: %s", jogador2.nome, jogador2.classe);
                             jogador2 = dado_inicio(jogador2);
                             parada = 0;
                             }
                             else
                             {
-                                puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                                puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
                                 scanf("%s", temp);
                             }
                             break;
                         case 2:
                             break;
                         default:
-                            printf("***Comando Inválido, tente novamente...***");
+                            printf("**Comando Invalido, tente novamente...**");
                             break;
                         }
                         break;    
                         default:
                             
-                            puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                            puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
                             scanf("%s", temp);
                         
                             break;
@@ -818,7 +991,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 }
                 menu = 0;
 
-                printf("\nDigite qualquer tecla para Começar o jogo!");
+                printf("\nDigite qualquer tecla para abrir o jogo!");
                 scanf("%s", temp);
                 limpar_tela();
                 FILE *prologo;
@@ -829,8 +1002,12 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                     fscanf(prologo, "%c", &caractere);
                     printf("%c", caractere);
                 }
-                printf("\n\n\nE assim, começa a jornada de %s. Divirta-se!", jogador2.nome);
+                printf("\n\n\nE assim, iniciasse a jornada de %s. Divirta-se!", jogador2.nome);
                 strcpy(jogador2.posicao, "0000");
+                jogador2.atributo.ener = jogador2.atributo.energia;
+                jogador2.atributo.hab = jogador2.atributo.habilidade;
+                jogador2.atributo.sor = jogador2.atributo.sorte;
+
                 return jogador2;
             }
             if (carregar == 1)
@@ -873,7 +1050,7 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
             }   
             else
             {
-                puts("***Comando Inválido, digite qualquer tecla para tentar novamente...***");
+                puts("**Comando Invalido, digite qualquer tecla para tentar novamente...**");
                 scanf("%s", temp);
                 fflush(stdin);
                 limpar_tela();
@@ -903,21 +1080,28 @@ PERSONAGEM dado_inicio(PERSONAGEM jogador)
         {
             
             jogador.atributo.habilidade += dado;
-            printf("\nVocê tirou %d no dado, agora você tem %d de Habilidade\n", jogador.atributo.habilidade - hab, jogador.atributo.habilidade);
+            printf("\nVoce tirou %d no dado, agora voce tem %d de Habilidade\n", jogador.atributo.habilidade - hab, jogador.atributo.habilidade);
 
         }
         if(i == 1)
         {
+            if(ener == 4)
+            {
+                jogador.atributo.energia += (dado);
+                printf("\nVoce tirou %d no dado, agora voce tem %d de Energia\n", ((jogador.atributo.energia - ener)), jogador.atributo.energia);
+            }
+            else
+            {
+                jogador.atributo.energia += (dado*2);
+                printf("\nVoce tirou %d no dado, agora voce tem %d de Energia\n", ((jogador.atributo.energia - ener)/2), jogador.atributo.energia);
+            }
             
-            jogador.atributo.energia += (dado*2);
-            printf("\nVocê tirou %d no dado, agora você tem %d de Energia\n", ((jogador.atributo.energia - ener)/2), jogador.atributo.energia);
-
         }
         if(i == 2)
         {
             
             jogador.atributo.sorte += (dado);
-            printf("\nVocê tirou %d no dado, agora você tem %d de Sorte\n", jogador.atributo.sorte - sor, jogador.atributo.sorte);
+            printf("\nVoce tirou %d no dado, agora voce tem %d de Sorte\n", jogador.atributo.sorte - sor, jogador.atributo.sorte);
 
         }
         i++;
@@ -943,12 +1127,12 @@ int TESTE_SORTE(PERSONAGEM jogador)
         if(i == 2)
         {
             soma+= dado;
-            printf("\nVocê tirou %d no primeiro dado, \nvoce pode tirar no maximo %d no segundo dado\n\n", dado, (jogador.atributo.sorte - dado) - 1);
+            printf("\nVoce tirou %d no primeiro dado, \nvoce pode tirar no maximo %d no segundo dado\n\n", dado, (jogador.atributo.sorte - dado) - 1);
         }
          if(i == 1)
         {
             soma+= dado;
-            printf("\nVocê tirou %d no segundo dado, \nA soma dos dados foi %d, voce tem %d de sorte.\n", dado, soma, jogador.atributo.sorte);
+            printf("\nVoce tirou %d no segundo dado, \nA soma dos dados foi %d, voce tem %d de sorte.\n", dado, soma, jogador.atributo.sorte);
         }
         i--;
     }
