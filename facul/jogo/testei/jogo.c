@@ -856,6 +856,11 @@ PERSONAGEM carregar_jogo(int *valor, PERSONAGEM jogador1)
                 limpar_tela();
                 printf("Insira seu nome: ");
                 scanf("%s", jogador2.nome);
+                if(strcmp(jogador2.nome, "dev") == 0)
+                    {
+                        jogador2.atributo.energia = 25, jogador2.atributo.habilidade = 25, jogador2.atributo.sorte = 25;
+                        return jogador2;
+                    }
                 system("cls");
                 jogador2.lugar = 0;
 
